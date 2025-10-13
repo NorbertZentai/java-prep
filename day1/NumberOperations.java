@@ -1,134 +1,134 @@
 /**
- * Day 1 - Számokkal kapcsolatos műveletek
+ * Day 1 - Number Operations
  * 
- * Ez a fájl számokkal kapcsolatos alapműveleteket tartalmaz.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains basic number operation exercises.
+ * Complete all tasks, then verify your solutions using the tests at the end.
  */
 
 public class NumberOperations {
 
     /**
-     * 1) FELADAT: Maximum szám keresése tömbben
+     * 1) TASK: Find Maximum Number in Array
      * 
-     * Cél: Add vissza a legnagyobb számot egy int tömbből
-     * Követelmények:
-     * - Iterálással oldd meg
-     * - Kezelje a negatív számokat is
-     * - Feltételezheted, hogy a tömb nem üres
+     * Goal: Return the largest number from an int array
+     * Requirements:
+     * - Solve using iteration
+     * - Handle negative numbers
+     * - You can assume the array is not empty
      * 
-     * Példa: [3, 7, 2, 9, 1] -> 9
+     * Example: [3, 7, 2, 9, 1] -> 9
      */
     public static int findMax(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0;
     }
 
     /**
-     * 2) FELADAT: Számok cseréje segédváltozóval
+     * 2) TASK: Swap Numbers with Temporary Variable
      * 
-     * Cél: Cseréld meg két szám értékét segédváltozó használatával
-     * Követelmények:
-     * - Használj ideiglenes változót
-     * - Térj vissza egy tömbbel: [csereUtánA, csereUtánB]
+     * Goal: Swap two number values using a temporary variable
+     * Requirements:
+     * - Use a temporary variable
+     * - Return an array: [swappedA, swappedB]
      * 
-     * Példa: swapWithTemp(5, 10) -> [10, 5]
+     * Example: swapWithTemp(5, 10) -> [10, 5]
      */
     public static int[] swapWithTemp(int a, int b) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return new int[]{a, b};
     }
 
     /**
-     * 3) FELADAT: Számok cseréje segédváltozó nélkül
+     * 3) TASK: Swap Numbers without Temporary Variable
      * 
-     * Cél: Cseréld meg két szám értékét segédváltozó nélkül
-     * Követelmények:
-     * - Használj aritmetikai műveleteket (+ és -)
-     * - Térj vissza egy tömbbel: [csereUtánA, csereUtánB]
+     * Goal: Swap two number values without using a temporary variable
+     * Requirements:
+     * - Use arithmetic operations (+ and -)
+     * - Return an array: [swappedA, swappedB]
      * 
-     * Példa: swapWithoutTemp(5, 10) -> [10, 5]
+     * Example: swapWithoutTemp(5, 10) -> [10, 5]
      */
     public static int[] swapWithoutTemp(int a, int b) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return new int[]{a, b};
     }
 
     // ===============================
-    // TESZTEK - Ne módosítsd ezeket!
+    // TESTS - Do not modify these!
     // ===============================
 
     public static void main(String[] args) {
-        System.out.println("=== SZÁM MŰVELETEK TESZTEK ===\n");
+        System.out.println("=== NUMBER OPERATIONS TESTS ===\n");
         
         runFindMaxTests();
         runSwapWithTempTests();
         runSwapWithoutTempTests();
         
-        System.out.println("\n=== TESZTEK BEFEJEZVE ===");
+        System.out.println("\n=== TESTS COMPLETED ===");
     }
 
     private static void runFindMaxTests() {
-        System.out.println("1. FIND MAX TESZTEK:");
+        System.out.println("1. FIND MAX TESTS:");
         
-        // Test 1: Pozitív számok
-        testFindMax(new int[]{3, 7, 2, 9, 1}, 9, "pozitív számok");
+        // Test 1: Positive numbers
+        testFindMax(new int[]{3, 7, 2, 9, 1}, 9, "positive numbers");
         
-        // Test 2: Negatív számok
-        testFindMax(new int[]{-5, -2, -8, -1}, -1, "negatív számok");
+        // Test 2: Negative numbers
+        testFindMax(new int[]{-5, -2, -8, -1}, -1, "negative numbers");
         
-        // Test 3: Kevert számok
-        testFindMax(new int[]{-3, 5, -1, 8, 2}, 8, "kevert számok");
+        // Test 3: Mixed numbers
+        testFindMax(new int[]{-3, 5, -1, 8, 2}, 8, "mixed numbers");
         
-        // Test 4: Egy elem
-        testFindMax(new int[]{42}, 42, "egy elem");
+        // Test 4: One element
+        testFindMax(new int[]{42}, 42, "single element");
         
-        // Test 5: Egyforma elemek
-        testFindMax(new int[]{7, 7, 7, 7}, 7, "egyforma elemek");
+        // Test 5: Identical elements
+        testFindMax(new int[]{7, 7, 7, 7}, 7, "identical elements");
         
         System.out.println();
     }
 
     private static void runSwapWithTempTests() {
-        System.out.println("2. SWAP WITH TEMP TESZTEK:");
+        System.out.println("2. SWAP WITH TEMP TESTS:");
         
-        // Test 1: Pozitív számok
-        testSwap(NumberOperations::swapWithTemp, 5, 10, "pozitív számok");
+        // Test 1: Positive numbers
+        testSwap(NumberOperations::swapWithTemp, 5, 10, "positive numbers");
         
-        // Test 2: Negatív számok
-        testSwap(NumberOperations::swapWithTemp, -3, -7, "negatív számok");
+        // Test 2: Negative numbers
+        testSwap(NumberOperations::swapWithTemp, -3, -7, "negative numbers");
         
-        // Test 3: Kevert számok
-        testSwap(NumberOperations::swapWithTemp, -5, 8, "kevert számok");
+        // Test 3: Mixed numbers
+        testSwap(NumberOperations::swapWithTemp, -5, 8, "mixed numbers");
         
-        // Test 4: Nulla értékek
-        testSwap(NumberOperations::swapWithTemp, 0, 15, "nulla értékek");
+        // Test 4: Zero values
+        testSwap(NumberOperations::swapWithTemp, 0, 15, "zero values");
         
         System.out.println();
     }
 
     private static void runSwapWithoutTempTests() {
-        System.out.println("3. SWAP WITHOUT TEMP TESZTEK:");
+        System.out.println("3. SWAP WITHOUT TEMP TESTS:");
         
-        // Test 1: Pozitív számok
-        testSwap(NumberOperations::swapWithoutTemp, 5, 10, "pozitív számok");
+        // Test 1: Positive numbers
+        testSwap(NumberOperations::swapWithoutTemp, 5, 10, "positive numbers");
         
-        // Test 2: Negatív számok
-        testSwap(NumberOperations::swapWithoutTemp, -3, -7, "negatív számok");
+        // Test 2: Negative numbers
+        testSwap(NumberOperations::swapWithoutTemp, -3, -7, "negative numbers");
         
-        // Test 3: Kevert számok
-        testSwap(NumberOperations::swapWithoutTemp, -5, 8, "kevert számok");
+        // Test 3: Mixed numbers
+        testSwap(NumberOperations::swapWithoutTemp, -5, 8, "mixed numbers");
         
-        // Test 4: Nulla értékek
-        testSwap(NumberOperations::swapWithoutTemp, 0, 15, "nulla értékek");
+        // Test 4: Zero values
+        testSwap(NumberOperations::swapWithoutTemp, 0, 15, "zero values");
         
         System.out.println();
     }
 
-    // Segéd metódusok a teszteléshez
+    // Helper methods for testing
     private static void testFindMax(int[] input, int expected, String description) {
         int result = findMax(input);
         String status = expected == result ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s -> %d (várt: %d)\n", 
+        System.out.printf("   %s - %s: %s -> %d (expected: %d)\n", 
                          status, description, arrayToString(input), result, expected);
     }
 
@@ -136,7 +136,7 @@ public class NumberOperations {
         int[] result = swapFunc.swap(a, b);
         boolean isCorrect = result.length == 2 && result[0] == b && result[1] == a;
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: (%d, %d) -> [%d, %d] (várt: [%d, %d])\n", 
+        System.out.printf("   %s - %s: (%d, %d) -> [%d, %d] (expected: [%d, %d])\n", 
                          status, description, a, b, result[0], result[1], b, a);
     }
 

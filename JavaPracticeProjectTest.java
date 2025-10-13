@@ -6,10 +6,10 @@ import java.time.LocalDate;
 import java.util.*;
 
 /**
- * JavaPracticeProjectTest - Tesztek a gyakorló projekt osztályaihoz
+ * JavaPracticeProjectTest - Tests for practice project classes
  * 
- * Teszteli a DailyRoutineTracker, StudyTopic, LearningStatistics 
- * és InterviewPreparation osztályokat.
+ * Tests the DailyRoutineTracker, StudyTopic, LearningStatistics 
+ * and InterviewPreparation classes.
  */
 public class JavaPracticeProjectTest {
 
@@ -24,22 +24,22 @@ public class JavaPracticeProjectTest {
         prep = new JavaPracticeProject.InterviewPreparation();
     }
 
-    // DailyRoutineTracker tesztek
+    // DailyRoutineTracker tests
     @Test
-    @DisplayName("Feladat hozzáadása és lekérése")
+    @DisplayName("Add task and retrieve")
     void testAddAndGetTasks() {
         LocalDate today = LocalDate.now();
         tracker.addTask(today, "Java alapok tanulása");
-        tracker.addTask(today, "Tesztek írása");
+        tracker.addTask(today, "Write tests");
 
         List<String> tasks = tracker.getTasksForDate(today);
         assertEquals(2, tasks.size());
         assertTrue(tasks.contains("Java alapok tanulása"));
-        assertTrue(tasks.contains("Tesztek írása"));
+        assertTrue(tasks.contains("Write tests"));
     }
 
     @Test
-    @DisplayName("Nem létező nap feladatai")
+    @DisplayName("Tasks for non-existing day")
     void testGetTasksForNonExistentDate() {
         LocalDate yesterday = LocalDate.now().minusDays(1);
         List<String> tasks = tracker.getTasksForDate(yesterday);
@@ -47,19 +47,19 @@ public class JavaPracticeProjectTest {
     }
 
     @Test
-    @DisplayName("Összes feladat számolása")
+    @DisplayName("Count all tasks")
     void testTotalTaskCount() {
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plusDays(1);
         
-        tracker.addTask(today, "Feladat 1");
-        tracker.addTask(today, "Feladat 2");
-        tracker.addTask(tomorrow, "Feladat 3");
+        tracker.addTask(today, "Task 1");
+        tracker.addTask(today, "Task 2");
+        tracker.addTask(tomorrow, "Task 3");
 
         assertEquals(3, tracker.getTotalTaskCount());
     }
 
-    // StudyTopic tesztek
+    // StudyTopic tests
     @Test
     @DisplayName("Tanulási témák napok szerint")
     void testGetTopicsForDay() {
@@ -86,9 +86,9 @@ public class JavaPracticeProjectTest {
         assertEquals(0, interview.getDay());
     }
 
-    // LearningStatistics tesztek
+    // LearningStatistics tests
     @Test
-    @DisplayName("Haladás rögzítése és összes haladás")
+    @DisplayName("Record progress and all progress")
     void testRecordProgressAndTotal() {
         stats.recordProgress(JavaPracticeProject.StudyTopic.CORE_JAVA, 80);
         stats.recordProgress(JavaPracticeProject.StudyTopic.OOP, 90);
@@ -125,9 +125,9 @@ public class JavaPracticeProjectTest {
         assertEquals(0.0, stats.getAverageProgress(), 0.01);
     }
 
-    // InterviewPreparation tesztek
+    // InterviewPreparation tests
     @Test
-    @DisplayName("Feladat megoldottnak jelölése")
+    @DisplayName("Mark task as completed")
     void testMarkAsSolved() {
         prep.markAsSolved("FizzBuzz");
         prep.markAsSolved("Missing Number");
@@ -139,7 +139,7 @@ public class JavaPracticeProjectTest {
     }
 
     @Test
-    @DisplayName("Nem létező feladat jelölése")
+    @DisplayName("Mark non-existing task")
     void testMarkNonExistentProblemAsSolved() {
         int initialSize = prep.getRemainingProblems().size();
         prep.markAsSolved("Non-existent Problem");
@@ -160,7 +160,7 @@ public class JavaPracticeProjectTest {
     }
 
     @Test
-    @DisplayName("Összes feladat megoldása")
+    @DisplayName("Complete all tasks")
     void testAllProblemsSolved() {
         List<String> allProblems = Arrays.asList(
             "FizzBuzz", "Missing Number", "Detect Duplicate", 
@@ -177,7 +177,7 @@ public class JavaPracticeProjectTest {
     }
 
     @Test
-    @DisplayName("Hátralevő feladatok listája")
+    @DisplayName("Remaining tasks list")
     void testRemainingProblems() {
         List<String> initial = prep.getRemainingProblems();
         assertEquals(7, initial.size());

@@ -1,17 +1,17 @@
 /**
- * JavaPracticeProject - 7 napos Java gyakorló projekt + interjú feladatok
+ * JavaPracticeProject - 7-day Java practice project + interview problems
  * 
- * Cél: Felkészülés 1-1.5 órás Java kódolási tesztre
- * Minero Gloster stílusú: tiszta OOP kód, Collections, Streams, problémamegoldás
+ * Goal: Preparation for 1-1.5 hour Java coding tests
+ * Minero Gloster style: clean OOP code, Collections, Streams, problem solving
  * 
- * Projekt struktúra:
- * - JavaBasics.java - Alapvető feladatok és tesztek
- * - CollectionsAndAlgorithms.java - Gyűjtemények és algoritmusok
- * - OOPExercises.java - Objektum-orientált programozás
- * - StreamsAndLambdas.java - Stream API és lambda kifejezések
- * - ExceptionHandling.java - Kivételkezelés és fájl I/O
- * - TestingAndCleanCode.java - Tesztelés és tiszta kód
- * - InterviewProblems.java - Gyakori interjú feladatok
+ * Project structure:
+ * - JavaBasics.java - Basic exercises and tests
+ * - CollectionsAndAlgorithms.java - Collections and algorithms
+ * - OOPExercises.java - Object-oriented programming
+ * - StreamsAndLambdas.java - Stream API and lambda expressions
+ * - ExceptionHandling.java - Exception handling and file I/O
+ * - TestingAndCleanCode.java - Testing and clean code
+ * - InterviewProblems.java - Common interview problems
  */
 
 import java.util.*;
@@ -22,21 +22,21 @@ import java.io.*;
 public class JavaPracticeProject {
     
     /**
-     * NAPI RUTIN ÉS ÜTEMTERV
+     * DAILY ROUTINE AND SCHEDULE
      * 
-     * Hét áttekintés:
-     * Nap 1 - Alapok: szintaxis, ciklusok, függvények
-     * Nap 2 - Tömbök és Collections: array, List/Map, rendezés
-     * Nap 3 - OOP alapok: osztályok, öröklés, polimorfizmus
-     * Nap 4 - Streams és Algoritmusok: Stream API, lambda, keresés/rendezés
-     * Nap 5 - Kivételek és File I/O: try-catch, custom exceptions, fájl kezelés
-     * Nap 6 - Tesztelés és Clean Code: JUnit, refaktor, debug
-     * Nap 7 - Teljes szimuláció és áttekintés: végprojekt, időkorlátos gyakorlás
+     * Week overview:
+     * Day 1 - Basics: syntax, loops, functions
+     * Day 2 - Arrays and Collections: array, List/Map, sorting
+     * Day 3 - OOP basics: classes, inheritance, polymorphism
+     * Day 4 - Streams and Algorithms: Stream API, lambda, search/sort
+     * Day 5 - Exceptions and File I/O: try-catch, custom exceptions, file handling
+     * Day 6 - Testing and Clean Code: JUnit, refactor, debug
+     * Day 7 - Full simulation and review: final project, timed practice
      */
     
     /**
-     * FELADAT 1: Napi rutinok nyomon követése
-     * Implementálj egy egyszerű naplót, amely nyomon követi a napi feladatokat
+     * TASK 1: Daily routine tracking
+     * Implement a simple log that tracks daily tasks
      */
     public static class DailyRoutineTracker {
         private Map<LocalDate, List<String>> dailyTasks;
@@ -61,8 +61,8 @@ public class JavaPracticeProject {
     }
     
     /**
-     * FELADAT 2: Tanulási témák kezelése
-     * Hozz létre egy rendszert a tanulási témák kategorizálására
+     * TASK 2: Learning topics management
+     * Create a system for categorizing learning topics
      */
     public enum StudyTopic {
         CORE_JAVA("Core Java", 1),
@@ -93,8 +93,8 @@ public class JavaPracticeProject {
     }
     
     /**
-     * FELADAT 3: Tanulási statisztikák
-     * Számítsd ki a haladást és statisztikákat
+     * TASK 3: Learning statistics
+     * Calculate progress and statistics
      */
     public static class LearningStatistics {
         private Map<StudyTopic, Integer> topicProgress;
@@ -129,8 +129,8 @@ public class JavaPracticeProject {
     }
     
     /**
-     * FELADAT 4: Interjú felkészülés nyomon követése
-     * Készíts egy rendszert az interjú feladatok gyakorlásához
+     * TASK 4: Interview preparation tracking
+     * Create a system for practicing interview problems
      */
     public static class InterviewPreparation {
         private List<String> interviewProblems;
@@ -167,52 +167,52 @@ public class JavaPracticeProject {
     }
     
     /**
-     * MAIN METÓDUS - Program belépési pont és példák
+     * MAIN METHOD - Program entry point and examples
      */
     public static void main(String[] args) {
-        System.out.println("=== Java Gyakorló Projekt ===");
+        System.out.println("=== Java Practice Project ===");
         
-        // Napi rutinok példa
+        // Daily routines example
         DailyRoutineTracker tracker = new DailyRoutineTracker();
         LocalDate today = LocalDate.now();
-        tracker.addTask(today, "JavaBasics feladatok megoldása");
-        tracker.addTask(today, "Tesztek írása");
-        tracker.addTask(today, "Kód átnézés");
+        tracker.addTask(today, "Solve JavaBasics exercises");
+        tracker.addTask(today, "Write tests");
+        tracker.addTask(today, "Code review");
         
-        System.out.println("Mai feladatok: " + tracker.getTasksForDate(today));
-        System.out.println("Összes feladat: " + tracker.getTotalTaskCount());
+        System.out.println("Today's tasks: " + tracker.getTasksForDate(today));
+        System.out.println("Total tasks: " + tracker.getTotalTaskCount());
         
-        // Tanulási témák példa
-        System.out.println("\n=== Tanulási Témák ===");
+        // Learning topics example
+        System.out.println("\n=== Learning Topics ===");
         for (StudyTopic topic : StudyTopic.values()) {
-            System.out.println("Nap " + topic.getDay() + ": " + topic.getDescription());
+            System.out.println("Day " + topic.getDay() + ": " + topic.getDescription());
         }
         
-        // Haladás nyomon követése
+        // Progress tracking
         LearningStatistics stats = new LearningStatistics();
         stats.recordProgress(StudyTopic.CORE_JAVA, 85);
         stats.recordProgress(StudyTopic.COLLECTIONS, 70);
         stats.recordProgress(StudyTopic.OOP, 90);
         
-        System.out.println("\n=== Tanulási Statisztikák ===");
-        System.out.println("Teljes haladás: " + stats.getTotalProgress() + " pont");
-        System.out.println("Legjobb téma: " + stats.getBestTopic());
-        System.out.println("Átlagos haladás: " + String.format("%.1f", stats.getAverageProgress()));
+        System.out.println("\n=== Learning Statistics ===");
+        System.out.println("Total progress: " + stats.getTotalProgress() + " points");
+        System.out.println("Best topic: " + stats.getBestTopic());
+        System.out.println("Average progress: " + String.format("%.1f", stats.getAverageProgress()));
         
-        // Interjú felkészülés
+        // Interview preparation
         InterviewPreparation prep = new InterviewPreparation();
         prep.markAsSolved("FizzBuzz");
         prep.markAsSolved("Missing Number");
         
-        System.out.println("\n=== Interjú Felkészülés ===");
-        System.out.println("Befejezettség: " + String.format("%.1f%%", prep.getCompletionPercentage()));
-        System.out.println("Hátralevő feladatok: " + prep.getRemainingProblems());
+        System.out.println("\n=== Interview Preparation ===");
+        System.out.println("Completion: " + String.format("%.1f%%", prep.getCompletionPercentage()));
+        System.out.println("Remaining tasks: " + prep.getRemainingProblems());
         
-        System.out.println("\n=== Tippek ===");
-        System.out.println("- Kis metódusok írása");
-        System.out.println("- Edge case-ek kezelése (null, üres)");
-        System.out.println("- Beszédes változó nevek");
-        System.out.println("- Tesztek írása minden feladathoz");
-        System.out.println("- 7. napon próbáld meg a végprojektet jegyzet nélkül!");
+        System.out.println("\n=== Tips ===");
+        System.out.println("- Write small methods");
+        System.out.println("- Handle edge cases (null, empty)");
+        System.out.println("- Use descriptive variable names");
+        System.out.println("- Write tests for every task");
+        System.out.println("- On day 7, try the final project without notes!");
     }
 }

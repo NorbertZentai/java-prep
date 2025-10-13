@@ -1,8 +1,8 @@
 /**
- * JavaBasics - Gyakorló feladatok alapvető Java dolgokhoz
+ * JavaBasics - Practice exercises for fundamental Java concepts
  * 
- * Ez a fájl alapvető Java szintaxis, ciklusok és egyszerű algoritmusok gyakorlását szolgálja.
- * Minden feladat tartalmaz leírást, példát és tesztelési lehetőségeket.
+ * This file provides practice for basic Java syntax, loops, and simple algorithms.
+ * Every task contains description, example, and testing opportunities.
  */
 
 import java.util.*;
@@ -11,13 +11,13 @@ import java.util.stream.*;
 public class JavaBasics {
 
     /**
-     * FELADAT 1: Számok maximuma
-     * Cél: Adja vissza a legnagyobb számot egy tömbből
-     * Követelmények: Kezelje a negatív számokat is, nem üres tömb
+     * TASK 1: Maximum of numbers
+     * Goal: Return the largest number from an array
+     * Requirements: Handle negative numbers too, non-empty array
      */
     public static int findMax(int[] numbers) {
         if (numbers == null || numbers.length == 0) {
-            throw new IllegalArgumentException("A tömb nem lehet üres vagy null!");
+            throw new IllegalArgumentException("Array cannot be empty or null!");
         }
         
         int max = numbers[0];
@@ -30,9 +30,9 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 2: String megfordítása
-     * Cél: Fordítsa meg a bemeneti stringet
-     * Követelmények: Kezelje az üres és egykarkakteres stringeket
+     * TASK 2: String reversal
+     * Goal: Reverse the input string
+     * Requirements: Handle empty and single-character strings
      */
     public static String reverseString(String input) {
         if (input == null || input.length() <= 1) {
@@ -47,9 +47,9 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 3: Magánhangzók számolása
-     * Cél: Számolja meg a magánhangzókat egy szóban
-     * Követelmények: Nem érzékeny a kis/nagybetűkre, csak a e i o u
+     * TASK 3: Vowel counting
+     * Goal: Count the vowels in a word
+     * Requirements: Case-insensitive, only a e i o u
      */
     public static int countVowels(String word) {
         if (word == null) {
@@ -67,12 +67,12 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 4: Számok cseréje
-     * Cél: Cserélje meg két szám értékét
-     * Variánsok: segédváltozóval és anélkül
+     * TASK 4: Number swapping
+     * Goal: Swap the values of two numbers
+     * Variants: with helper variable and without
      */
     public static int[] swapNumbers(int a, int b) {
-        // Segédváltozóval
+        // With helper variable
         int temp = a;
         a = b;
         b = temp;
@@ -80,7 +80,7 @@ public class JavaBasics {
     }
     
     public static int[] swapNumbersWithoutTemp(int a, int b) {
-        // Aritmetikai módszer
+        // Arithmetic method
         a = a + b;
         b = a - b;
         a = a - b;
@@ -88,9 +88,9 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 5: Palindróma ellenőrzés
-     * Cél: Ellenőrizze, hogy egy string palindróma-e
-     * Követelmények: Nem érzékeny a kis/nagybetűkre
+     * TASK 5: Palindrome check
+     * Goal: Check if a string is a palindrome
+     * Requirements: Case-insensitive
      */
     public static boolean isPalindrome(String input) {
         if (input == null) {
@@ -112,8 +112,8 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 6: Tömbműveletek
-     * Cél: Alapműveletek: összeg, átlag, min/max
+     * TASK 6: Array operations
+     * Goal: Basic operations: sum, average, min/max
      */
     public static int sum(int[] numbers) {
         return Arrays.stream(numbers).sum();
@@ -129,8 +129,8 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 7: Duplikátumok eltávolítása
-     * Cél: Egyedi elemek visszaadása egy tömbből
+     * TASK 7: Remove duplicates
+     * Goal: Return unique elements from an array
      */
     public static int[] removeDuplicates(int[] numbers) {
         return Arrays.stream(numbers)
@@ -139,12 +139,12 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 8: Második legnagyobb szám
-     * Cél: Adja vissza a második legnagyobb számot
+     * TASK 8: Second largest number
+     * Goal: Return the second largest number
      */
     public static int secondLargest(int[] numbers) {
         if (numbers.length < 2) {
-            throw new IllegalArgumentException("Legalább 2 elem szükséges!");
+            throw new IllegalArgumentException("At least 2 elements required!");
         }
         
         int[] uniqueSorted = Arrays.stream(numbers)
@@ -153,16 +153,16 @@ public class JavaBasics {
                                   .toArray();
         
         if (uniqueSorted.length < 2) {
-            throw new IllegalArgumentException("Nincs második legnagyobb elem!");
+            throw new IllegalArgumentException("No second largest element!");
         }
         
         return uniqueSorted[uniqueSorted.length - 2];
     }
 
     /**
-     * FELADAT 9: FizzBuzz játék
-     * Cél: 1-től n-ig számolva, 3-mal oszthatóknál "Fizz", 
-     *      5-tel oszthatóknál "Buzz", mindkettővel "FizzBuzz"
+     * TASK 9: FizzBuzz game
+     * Goal: Counting from 1 to n, "Fizz" for divisible by 3, 
+     *       "Buzz" for divisible by 5, "FizzBuzz" for both
      */
     public static String[] fizzBuzz(int n) {
         String[] result = new String[n];
@@ -181,12 +181,12 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 10: Faktoriális számítás
-     * Cél: Számítsa ki n! értékét rekurzívan és iteratívan
+     * TASK 10: Factorial calculation
+     * Goal: Calculate n! value recursively and iteratively
      */
     public static long factorialRecursive(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Negatív számnak nincs faktoriálisa!");
+            throw new IllegalArgumentException("Negative numbers don't have factorial!");
         }
         if (n <= 1) {
             return 1;
@@ -196,7 +196,7 @@ public class JavaBasics {
     
     public static long factorialIterative(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Negatív számnak nincs faktoriálisa!");
+            throw new IllegalArgumentException("Negative numbers don't have factorial!");
         }
         long result = 1;
         for (int i = 2; i <= n; i++) {
@@ -206,8 +206,8 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 11: Fibonacci sorozat
-     * Cél: Adja vissza az első n Fibonacci számot
+     * TASK 11: Fibonacci sequence
+     * Goal: Return the first n Fibonacci numbers
      */
     public static int[] fibonacciSequence(int n) {
         if (n <= 0) {
@@ -228,8 +228,8 @@ public class JavaBasics {
     }
 
     /**
-     * FELADAT 12: Prímszám ellenőrzés
-     * Cél: Ellenőrizze, hogy egy szám prím-e
+     * TASK 12: Prime number check
+     * Goal: Check if a number is prime
      */
     public static boolean isPrime(int n) {
         if (n <= 1) {
@@ -251,58 +251,58 @@ public class JavaBasics {
     }
 
     /**
-     * FŐPROGRAM - Teszteléshez és demónstrációhoz
+     * MAIN PROGRAM - For testing and demonstration
      */
     public static void main(String[] args) {
-        System.out.println("=== JAVA ALAPOK GYAKORLÓ FELADATOK ===\n");
+        System.out.println("=== JAVA BASICS PRACTICE EXERCISES ===\n");
         
-        // 1. Maximumkeresés tesztelése
+        // 1. Maximum search testing
         int[] testNumbers = {3, 7, 2, 9, 1, 5};
-        System.out.println("1. Maximum keresés:");
-        System.out.println("Tömb: " + Arrays.toString(testNumbers));
+        System.out.println("1. Maximum search:");
+        System.out.println("Array: " + Arrays.toString(testNumbers));
         System.out.println("Maximum: " + findMax(testNumbers) + "\n");
         
-        // 2. String megfordítás
+        // 2. String reversal
         String testString = "hello";
-        System.out.println("2. String megfordítás:");
-        System.out.println("Eredeti: " + testString);
-        System.out.println("Megfordítva: " + reverseString(testString) + "\n");
+        System.out.println("2. String reversal:");
+        System.out.println("Original: " + testString);
+        System.out.println("Reversed: " + reverseString(testString) + "\n");
         
-        // 3. Magánhangzók számolása
+        // 3. Vowel counting
         String testWord = "programming";
-        System.out.println("3. Magánhangzók számolása:");
-        System.out.println("Szó: " + testWord);
-        System.out.println("Magánhangzók száma: " + countVowels(testWord) + "\n");
+        System.out.println("3. Vowel counting:");
+        System.out.println("Word: " + testWord);
+        System.out.println("Vowel count: " + countVowels(testWord) + "\n");
         
-        // 4. Palindróma ellenőrzés
+        // 4. Palindrome check
         String[] testPalindromes = {"racecar", "hello", "madam"};
-        System.out.println("4. Palindróma ellenőrzés:");
+        System.out.println("4. Palindrome check:");
         for (String word : testPalindromes) {
-            System.out.println(word + " palindróma? " + isPalindrome(word));
+            System.out.println(word + " palindrome? " + isPalindrome(word));
         }
         System.out.println();
         
         // 5. FizzBuzz
-        System.out.println("5. FizzBuzz 1-től 15-ig:");
+        System.out.println("5. FizzBuzz from 1 to 15:");
         String[] fizzBuzzResult = fizzBuzz(15);
         System.out.println(Arrays.toString(fizzBuzzResult) + "\n");
         
-        // 6. Faktoriális
+        // 6. Factorial
         int factNum = 5;
-        System.out.println("6. Faktoriális számítás:");
-        System.out.println(factNum + "! = " + factorialRecursive(factNum) + " (rekurzív)");
-        System.out.println(factNum + "! = " + factorialIterative(factNum) + " (iteratív)\n");
+        System.out.println("6. Factorial calculation:");
+        System.out.println(factNum + "! = " + factorialRecursive(factNum) + " (recursive)");
+        System.out.println(factNum + "! = " + factorialIterative(factNum) + " (iterative)\n");
         
         // 7. Fibonacci
-        System.out.println("7. Fibonacci sorozat (első 10 szám):");
+        System.out.println("7. Fibonacci sequence (first 10 numbers):");
         int[] fibSeq = fibonacciSequence(10);
         System.out.println(Arrays.toString(fibSeq) + "\n");
         
-        // 8. Prímszám ellenőrzés
+        // 8. Prime number check
         int[] primeTests = {2, 3, 4, 17, 25, 29};
-        System.out.println("8. Prímszám ellenőrzés:");
+        System.out.println("8. Prime number check:");
         for (int num : primeTests) {
-            System.out.println(num + " prím? " + isPrime(num));
+            System.out.println(num + " prime? " + isPrime(num));
         }
     }
 }

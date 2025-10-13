@@ -1,88 +1,88 @@
 import java.util.*;
 
 /**
- * Day 6 - Tesztelés és hibakeresés
+ * Day 6 - Testing and Debugging
  * 
- * Ez a fájl unit testing, debug gyakorlatokat és kódminőség javítást tartalmaz.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains unit testing, debugging practices, and code quality improvements.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class TestingAndDebugging {
 
     /**
-     * 1) FELADAT: Hibás kód javítása - NullPointerException
+     * 1) TASK: Fix Buggy Code - NullPointerException
      * 
-     * Cél: Javítsd ki ezt a metódust ami NPE-t dob
-     * A metódus a string hosszát kell visszaadja, de kezelnie kell a null esetet
+     * Goal: Fix this method that throws NPE
+     * The method should return string length but must handle null case
      * 
-     * Hibás verzió: return input.length();
+     * Buggy version: return input.length();
      */
     public static int getStringLengthSafely(String input) {
-        // TODO: Javítsd ki a null pointer exception-t
-        return input.length(); // Ez hibás - javítsd ki!
+        // TODO: Fix the null pointer exception
+        return input.length(); // This is buggy - fix it!
     }
 
     /**
-     * 2) FELADAT: Hibás kód javítása - ArrayIndexOutOfBoundsException
+     * 2) TASK: Fix Buggy Code - ArrayIndexOutOfBoundsException
      * 
-     * Cél: Javítsd ki ezt a metódust ami tömbindex hibát dob
-     * A metódus az utolsó elemet kell visszaadja a tömbből
+     * Goal: Fix this method that throws array index error
+     * The method should return the last element from the array
      * 
-     * Hibás verzió próbálja elérni az utolsó elemet, de rosszul számol
+     * Buggy version tries to access last element but calculates wrong
      */
     public static int getLastElement(int[] array) {
-        // TODO: Javítsd ki az index out of bounds hibát
+        // TODO: Fix the index out of bounds error
         if (array.length == 0) {
-            throw new IllegalArgumentException("A tömb nem lehet üres!");
+            throw new IllegalArgumentException("Array cannot be empty!");
         }
-        return array[array.length]; // Ez hibás - javítsd ki!
+        return array[array.length]; // This is buggy - fix it!
     }
 
     /**
-     * 3) FELADAT: Logikai hiba javítása - rossz feltétel
+     * 3) TASK: Fix Logic Error - Wrong Condition
      * 
-     * Cél: Ez a metódus ellenőrizni kell hogy egy szám páros-e
-     * De van benne logikai hiba - javítsd ki!
+     * Goal: This method should check if a number is even
+     * But it has a logic error - fix it!
      */
     public static boolean isEven(int number) {
-        // TODO: Javítsd ki a logikai hibát
-        return number % 2 == 1; // Ez hibás logika - javítsd ki!
+        // TODO: Fix the logic error
+        return number % 2 == 1; // This is wrong logic - fix it!
     }
 
     /**
-     * 4) FELADAT: Edge case kezelés - lista műveletek
+     * 4) TASK: Edge Case Handling - List Operations
      * 
-     * Cél: Implementálj egy metódust ami megfordítja a lista elemeit
-     * De figyeld az edge case-eket: null lista, üres lista, egy elem
+     * Goal: Implement a method that reverses list elements
+     * But watch for edge cases: null list, empty list, single element
      */
     public static <T> List<T> reverseList(List<T> input) {
-        // TODO: Implementáld a lista megfordítását edge case-ekkel
+        // TODO: Implement list reversal with edge cases
         return new ArrayList<>();
     }
 
     /**
-     * 5) FELADAT: Teljesítmény optimalizálás - string concatenation
+     * 5) TASK: Performance Optimization - String Concatenation
      * 
-     * Cél: Ez a metódus sok stringet fűz össze, de inefficiensen
-     * Optimalizáld StringBuilder használatával!
+     * Goal: This method concatenates many strings but inefficiently
+     * Optimize using StringBuilder!
      */
     public static String concatenateNumbers(int count) {
-        // TODO: Optimalizáld StringBuilder használatával
+        // TODO: Optimize using StringBuilder
         String result = "";
         for (int i = 1; i <= count; i++) {
-            result += i + ","; // Ez inefficiens - javítsd ki!
+            result += i + ","; // This is inefficient - fix it!
         }
         return result;
     }
 
     /**
-     * 6) FELADAT: Kód refaktorálás - tiszta kód
+     * 6) TASK: Code refactoring - clean code
      * 
-     * Cél: Ez a metódus működik, de olvashatatlan és bonyolult
+     * Goal: This method works, but is unreadable and complicated
      * Refaktoráld tisztább, érthetőbb kóddá!
      */
     public static boolean checkPasswordStrength(String pwd) {
-        // TODO: Refaktoráld ezt tisztább, olvashatóbb kóddá
+        // TODO: Refactor this to cleaner, more readable code
         if (pwd == null || pwd.length() < 8) return false;
         boolean a = false, b = false, c = false, d = false;
         for (int i = 0; i < pwd.length(); i++) {
@@ -96,10 +96,10 @@ public class TestingAndDebugging {
     }
 
     /**
-     * 7) FELADAT: Unit test írása
+     * 7) TASK: Unit test writing
      * 
-     * Cél: Írj teszteket az alábbi egyszerű metódushoz
-     * Teszteld a normál esetet, edge case-eket és hibás bemeneteket
+     * Goal: Write tests for the following simple method
+     * Test normal cases, edge cases and invalid inputs
      */
     public static int divide(int a, int b) {
         if (b == 0) {
@@ -109,10 +109,10 @@ public class TestingAndDebugging {
     }
 
     /**
-     * 8) FELADAT: Debug segéd metódus
+     * 8) TASK: Debug helper method
      * 
-     * Cél: Írj egy metódust ami debug információkat ír ki egy tömbről
-     * Legyen informatív és segítse a hibakeresést
+     * Goal: Write a method that prints debug information about an array
+     * Should be informative and help with debugging
      */
     public static void debugArrayInfo(int[] array, String arrayName) {
         // TODO: Implementálj hasznos debug kiírást
@@ -120,11 +120,11 @@ public class TestingAndDebugging {
     }
 
     // ===============================
-    // TESZTEK - Ne módosítsd ezeket!
+    // TESTS - Do not modify these!
     // ===============================
 
     public static void main(String[] args) {
-        System.out.println("=== TESZTELÉS ÉS HIBAKERESÉS TESZTEK ===\n");
+        System.out.println("=== TESTING AND DEBUGGING TESTS ===\n");
         
         runNullPointerFixTests();
         runArrayIndexFixTests();
@@ -135,7 +135,7 @@ public class TestingAndDebugging {
         runDivisionTests();
         runDebugTests();
         
-        System.out.println("\n=== TESZTEK BEFEJEZVE ===");
+        System.out.println("\n=== TESTS COMPLETED ===");
     }
 
     private static void runNullPointerFixTests() {

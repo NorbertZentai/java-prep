@@ -3,63 +3,63 @@ import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * JavaBasicsTest - Tesztek a JavaBasics osztály feladataihoz
+ * JavaBasicsTest - Tests for JavaBasics class tasks
  * 
- * JUnit 5 tesztek minden feladathoz, beleértve az edge case-eket is.
- * Futtatás: java -cp ".:junit-platform-console-standalone.jar" org.junit.platform.console.ConsoleLauncher --scan-classpath
+ * JUnit 5 tests for all tasks, including edge cases.
+ * Run: java -cp ".:junit-platform-console-standalone.jar" org.junit.platform.console.ConsoleLauncher --scan-classpath
  */
 public class JavaBasicsTest {
 
     @Test
-    @DisplayName("Legnagyobb szám keresése - normál eset")
+    @DisplayName("Find maximum number - normal case")
     void testFindMaxNormal() {
         int[] numbers = {3, 7, 2, 9, 1};
         assertEquals(9, JavaBasics.findMax(numbers));
     }
 
     @Test
-    @DisplayName("Legnagyobb szám keresése - negatív számok")
+    @DisplayName("Find maximum number - negative numbers")
     void testFindMaxNegative() {
         int[] numbers = {-5, -2, -8, -1};
         assertEquals(-1, JavaBasics.findMax(numbers));
     }
 
     @Test
-    @DisplayName("Legnagyobb szám keresése - egy elem")
+    @DisplayName("Find maximum number - single element")
     void testFindMaxSingleElement() {
         int[] numbers = {42};
         assertEquals(42, JavaBasics.findMax(numbers));
     }
 
     @Test
-    @DisplayName("Legnagyobb szám keresése - üres tömb exception")
+    @DisplayName("Find maximum number - empty array exception")
     void testFindMaxEmptyArray() {
         int[] numbers = {};
         assertThrows(IllegalArgumentException.class, () -> JavaBasics.findMax(numbers));
     }
 
     @Test
-    @DisplayName("String megfordítása - normál eset")
+    @DisplayName("String reversal - normal case")
     void testReverseStringNormal() {
         assertEquals("olleh", JavaBasics.reverseString("hello"));
         assertEquals("avaJ", JavaBasics.reverseString("Java"));
     }
 
     @Test
-    @DisplayName("String megfordítása - üres string")
+    @DisplayName("String reversal - empty string")
     void testReverseStringEmpty() {
         assertEquals("", JavaBasics.reverseString(""));
         assertNull(JavaBasics.reverseString(null));
     }
 
     @Test
-    @DisplayName("String megfordítása - egy karakter")
+    @DisplayName("String reversal - single character")
     void testReverseStringSingleChar() {
         assertEquals("a", JavaBasics.reverseString("a"));
     }
 
     @Test
-    @DisplayName("Magánhangzók számolása - normál eset")
+    @DisplayName("Vowel counting - normal case")
     void testCountVowelsNormal() {
         assertEquals(3, JavaBasics.countVowels("hello")); // e, o
         assertEquals(3, JavaBasics.countVowels("Java")); // a, a
@@ -67,14 +67,14 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Magánhangzók számolása - kis és nagy betűk")
+    @DisplayName("Vowel counting - upper and lowercase")
     void testCountVowelsCaseInsensitive() {
         assertEquals(5, JavaBasics.countVowels("AEIOU"));
         assertEquals(5, JavaBasics.countVowels("AeIoU"));
     }
 
     @Test
-    @DisplayName("Magánhangzók számolása - nincsenek magánhangzók")
+    @DisplayName("Vowel counting - no vowels")
     void testCountVowelsNoVowels() {
         assertEquals(0, JavaBasics.countVowels("bcdfg"));
         assertEquals(0, JavaBasics.countVowels(""));
@@ -82,14 +82,14 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Számok cseréje - segédváltozóval")
+    @DisplayName("Number swapping - with helper variable")
     void testSwapNumbers() {
         int[] result = JavaBasics.swapNumbers(5, 10);
         assertArrayEquals(new int[]{10, 5}, result);
     }
 
     @Test
-    @DisplayName("Számok cseréje - segédváltozó nélkül")
+    @DisplayName("Number swapping - without helper variable")
     void testSwapNumbersWithoutTemp() {
         int[] result = JavaBasics.swapNumbersWithoutTemp(5, 10);
         assertArrayEquals(new int[]{10, 5}, result);
@@ -100,7 +100,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Palindróma ellenőrzés - igaz esetek")
+    @DisplayName("Palindrome check - true cases")
     void testIsPalindromeTrue() {
         assertTrue(JavaBasics.isPalindrome("racecar"));
         assertTrue(JavaBasics.isPalindrome("A"));
@@ -109,7 +109,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Palindróma ellenőrzés - hamis esetek")
+    @DisplayName("Palindrome check - false cases")
     void testIsPalindromeFalse() {
         assertFalse(JavaBasics.isPalindrome("hello"));
         assertFalse(JavaBasics.isPalindrome("Java"));
@@ -117,14 +117,14 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Palindróma ellenőrzés - kis/nagy betűk")
+    @DisplayName("Palindrome check - case insensitive")
     void testIsPalindromeCaseInsensitive() {
         assertTrue(JavaBasics.isPalindrome("RaceCar"));
         assertTrue(JavaBasics.isPalindrome("ABBA"));
     }
 
     @Test
-    @DisplayName("Tömb összeg")
+    @DisplayName("Array sum")
     void testSum() {
         assertEquals(15, JavaBasics.sum(new int[]{1, 2, 3, 4, 5}));
         assertEquals(0, JavaBasics.sum(new int[]{-2, -1, 0, 1, 2}));
@@ -132,7 +132,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Tömb átlag")
+    @DisplayName("Array average")
     void testAverage() {
         assertEquals(3.0, JavaBasics.average(new int[]{1, 2, 3, 4, 5}), 0.001);
         assertEquals(0.0, JavaBasics.average(new int[]{-2, -1, 0, 1, 2}), 0.001);
@@ -140,14 +140,14 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Tömb minimum")
+    @DisplayName("Array minimum")
     void testMin() {
         assertEquals(1, JavaBasics.min(new int[]{1, 2, 3, 4, 5}));
         assertEquals(-5, JavaBasics.min(new int[]{-2, -1, -5, 1, 2}));
     }
 
     @Test
-    @DisplayName("Duplikátumok eltávolítása")
+    @DisplayName("Remove duplicates")
     void testRemoveDuplicates() {
         int[] result = JavaBasics.removeDuplicates(new int[]{1, 2, 2, 3, 3, 3, 4});
         assertArrayEquals(new int[]{1, 2, 3, 4}, result);
@@ -157,7 +157,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Második legnagyobb szám")
+    @DisplayName("Second largest number")
     void testSecondLargest() {
         // Ez a teszt egy egyszerűsített változat, a tényleges implementáció javítható
         int[] numbers = {1, 5, 2, 9, 3};
@@ -169,7 +169,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Második legnagyobb - duplikátumok kezelése")
+    @DisplayName("Second largest - handle duplicates")
     void testSecondLargestWithDuplicates() {
         int[] numbers = {5, 1, 5, 2, 9, 3, 9};
         assertEquals(5, JavaBasics.secondLargest(numbers));
@@ -179,7 +179,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("FizzBuzz teszt")
+    @DisplayName("FizzBuzz test")
     void testFizzBuzz() {
         String[] result = JavaBasics.fizzBuzz(15);
         assertEquals("1", result[0]);
@@ -193,7 +193,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("FizzBuzz - kisebb számok")
+    @DisplayName("FizzBuzz - smaller numbers")
     void testFizzBuzzSmall() {
         String[] result = JavaBasics.fizzBuzz(5);
         assertEquals(5, result.length);
@@ -201,7 +201,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Faktoriális - rekurzív")
+    @DisplayName("Factorial - recursive")
     void testFactorialRecursive() {
         assertEquals(1, JavaBasics.factorialRecursive(0));
         assertEquals(1, JavaBasics.factorialRecursive(1));
@@ -212,7 +212,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Faktoriális - iteratív")
+    @DisplayName("Factorial - iterative")
     void testFactorialIterative() {
         assertEquals(1, JavaBasics.factorialIterative(0));
         assertEquals(1, JavaBasics.factorialIterative(1));
@@ -223,7 +223,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Faktoriális - negatív szám exception")
+    @DisplayName("Factorial - negative number exception")
     void testFactorialNegative() {
         assertThrows(IllegalArgumentException.class, () -> 
             JavaBasics.factorialRecursive(-1));
@@ -232,7 +232,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Fibonacci sorozat")
+    @DisplayName("Fibonacci sequence")
     void testFibonacciSequence() {
         assertArrayEquals(new int[]{}, JavaBasics.fibonacciSequence(0));
         assertArrayEquals(new int[]{0}, JavaBasics.fibonacciSequence(1));
@@ -244,14 +244,14 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Fibonacci - negatív vagy nulla")
+    @DisplayName("Fibonacci - negative or zero")
     void testFibonacciEdgeCases() {
         assertArrayEquals(new int[]{}, JavaBasics.fibonacciSequence(-1));
         assertArrayEquals(new int[]{}, JavaBasics.fibonacciSequence(0));
     }
 
     @Test
-    @DisplayName("Prímszám ellenőrzés - prímek")
+    @DisplayName("Prime number check - primes")
     void testIsPrimeTruecases() {
         assertTrue(JavaBasics.isPrime(2));
         assertTrue(JavaBasics.isPrime(3));
@@ -265,7 +265,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Prímszám ellenőrzés - nem prímek")
+    @DisplayName("Prime number check - non-primes")
     void testIsPrimeFalseCases() {
         assertFalse(JavaBasics.isPrime(0));
         assertFalse(JavaBasics.isPrime(1));
@@ -280,7 +280,7 @@ public class JavaBasicsTest {
     }
 
     @Test
-    @DisplayName("Prímszám ellenőrzés - negatív számok")
+    @DisplayName("Prime number check - negative numbers")
     void testIsPrimeNegative() {
         assertFalse(JavaBasics.isPrime(-1));
         assertFalse(JavaBasics.isPrime(-5));

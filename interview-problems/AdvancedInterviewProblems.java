@@ -1,16 +1,16 @@
 import java.util.*;
 
 /**
- * Interview Problems - Haladó algoritmusok
+ * Interview Problems - Advanced Algorithms
  * 
- * Ez a fájl haladóbb interview feladatokat tartalmaz.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains more advanced interview problems.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class AdvancedInterviewProblems {
 
     /**
-     * 1) FELADAT: LinkedList megfordítása
+     * 1) TASK: LinkedList reversal
      * 
      * Cél: Fordítsd meg egy egyszerű linked list-et
      * 
@@ -37,48 +37,48 @@ public class AdvancedInterviewProblems {
     }
 
     /**
-     * 2) FELADAT: Intervallumok összevonása (Merge Intervals)
+     * 2) TASK: Merge Intervals
      * 
-     * Cél: Vonj össze átfedő intervallumokat
-     * Bemeneti formátum: int[][] intervals ahol intervals[i] = [start, end]
+     * Goal: Merge overlapping intervals
+     * Input format: int[][] intervals where intervals[i] = [start, end]
      * 
-     * Példa: [[1,3],[2,6],[8,10],[15,18]] -> [[1,6],[8,10],[15,18]]
+     * Example: [[1,3],[2,6],[8,10],[15,18]] -> [[1,6],[8,10],[15,18]]
      */
     public static int[][] mergeIntervals(int[][] intervals) {
-        // TODO: Implementáld az intervallumok összevonását
+        // TODO: Implement interval merging
         return new int[0][0];
     }
 
     /**
-     * 3) FELADAT: Leghosszabb substring ismétlődő karakterek nélkül
+     * 3) TASK: Longest Substring Without Repeating Characters
      * 
-     * Cél: Keresd meg a leghosszabb substring hosszát amely nem tartalmaz ismétlődő karaktereket
+     * Goal: Find the length of longest substring without repeating characters
      * 
-     * Példa: "abcabcbb" -> 3 (abc)
-     * Példa: "bbbbb" -> 1 (b)
-     * Példa: "pwwkew" -> 3 (wke)
+     * Example: "abcabcbb" -> 3 (abc)
+     * Example: "bbbbb" -> 1 (b)
+     * Example: "pwwkew" -> 3 (wke)
      */
     public static int lengthOfLongestSubstring(String s) {
-        // TODO: Implementáld a sliding window algoritmust
+        // TODO: Implement sliding window algorithm
         return 0;
     }
 
     /**
-     * 4) FELADAT: Két szám összege (Two Sum)
+     * 4) TASK: Two Sum
      * 
-     * Cél: Keresd meg két szám indexét amelyek összege egyenlő a target-tel
+     * Goal: Find indices of two numbers that add up to target
      * 
-     * Példa: nums = [2,7,11,15], target = 9 -> [0,1] (2 + 7 = 9)
+     * Example: nums = [2,7,11,15], target = 9 -> [0,1] (2 + 7 = 9)
      */
     public static int[] twoSum(int[] nums, int target) {
-        // TODO: Implementáld a two sum algoritmust (HashMap használatával)
+        // TODO: Implement two sum algorithm (using HashMap)
         return new int[0];
     }
 
     /**
-     * 5) FELADAT: Érvényes Binary Search Tree ellenőrzés
+     * 5) TASK: Valid Binary Search Tree Check
      * 
-     * Cél: Ellenőrizd, hogy egy binary tree érvényes BST-e
+     * Goal: Check if a binary tree is a valid BST
      */
     public static class TreeNode {
         int val;
@@ -108,11 +108,11 @@ public class AdvancedInterviewProblems {
     }
 
     /**
-     * 6) FELADAT: Legnagyobb téglalap területe hisztogramban
+     * 6) TASK: Largest rectangle area in histogram
      * 
-     * Cél: Keresd meg a legnagyobb téglalap területét egy hisztogramban
+     * Goal: Find the largest rectangle area in a histogram
      * 
-     * Példa: heights = [2,1,5,6,2,3] -> 10 (5*2 téglalap)
+     * Example: heights = [2,1,5,6,2,3] -> 10 (5*2 rectangle)
      */
     public static int largestRectangleArea(int[] heights) {
         // TODO: Implementáld stack-alapú megoldással
@@ -120,7 +120,7 @@ public class AdvancedInterviewProblems {
     }
 
     /**
-     * 7) FELADAT: Minimum Window Substring
+     * 7) TASK: Minimum Window Substring
      * 
      * Cél: Keresd meg a legkisebb substring-et s-ben amely tartalmazza t összes karakterét
      * 
@@ -226,7 +226,7 @@ public class AdvancedInterviewProblems {
     }
 
     private static void runLargestRectangleTests() {
-        System.out.println("6. LEGNAGYOBB TÉGLALAP TESZTEK:");
+        System.out.println("6. LARGEST RECTANGLE TESTS:");
         
         testLargestRectangle(new int[]{2,1,5,6,2,3}, 10, "vegyes magasságok");
         testLargestRectangle(new int[]{2,4}, 4, "növekvő magasságok");

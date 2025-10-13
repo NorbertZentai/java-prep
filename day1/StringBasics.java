@@ -1,147 +1,147 @@
 /**
- * Day 1 - String és alapműveletek
+ * Day 1 - String Operations and Basic Tasks
  * 
- * Ez a fájl string manipulációs és alapvető műveleti feladatokat tartalmaz.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains string manipulation and basic operation exercises.
+ * Complete all tasks, then verify your solutions using the tests at the end.
  */
 
 public class StringBasics {
 
     /**
-     * 1) FELADAT: String megfordítása
+     * 1) TASK: String Reversal
      * 
-     * Cél: Fordítsd meg a bemeneti stringet
-     * Követelmények: 
-     * - Kezelje az üres stringet
-     * - Kezelje az egy karakteres stringet
+     * Goal: Reverse the input string
+     * Requirements: 
+     * - Handle empty strings
+     * - Handle single character strings
      * 
-     * Példa: "hello" -> "olleh"
+     * Example: "hello" -> "olleh"
      */
     public static String reverseString(String input) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return null;
     }
 
     /**
-     * 2) FELADAT: Magánhangzók számolása
+     * 2) TASK: Count Vowels
      * 
-     * Cél: Számold meg a magánhangzókat egy szóban
-     * Követelmények:
-     * - Nem érzékeny a kis/nagybetűkre
-     * - Csak a, e, i, o, u számít magánhangzónak
+     * Goal: Count the vowels in a word
+     * Requirements:
+     * - Case insensitive
+     * - Only a, e, i, o, u count as vowels
      * 
-     * Példa: "hello" -> 2 (e, o)
+     * Example: "hello" -> 2 (e, o)
      */
     public static int countVowels(String word) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0;
     }
 
     /**
-     * 3) FELADAT: Palindróma ellenőrzés
+     * 3) TASK: Palindrome Check
      * 
-     * Cél: Ellenőrizd, hogy egy string palindróma-e
-     * Követelmények:
-     * - Nem érzékeny a kis/nagybetűkre
-     * - Szóközöket nem kell kezelni (egyszerűsített verzió)
+     * Goal: Check if a string is a palindrome
+     * Requirements:
+     * - Case insensitive
+     * - No need to handle spaces (simplified version)
      * 
-     * Példa: "racecar" -> true, "hello" -> false
+     * Example: "racecar" -> true, "hello" -> false
      */
     public static boolean isPalindrome(String input) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return false;
     }
 
     // ===============================
-    // TESZTEK - Ne módosítsd ezeket!
+    // TESTS - Do not modify these!
     // ===============================
 
     public static void main(String[] args) {
-        System.out.println("=== STRING ALAPOK TESZTEK ===\n");
+        System.out.println("=== STRING BASICS TESTS ===\n");
         
         runReverseStringTests();
         runCountVowelsTests();
         runIsPalindromeTests();
         
-        System.out.println("\n=== TESZTEK BEFEJEZVE ===");
+        System.out.println("\n=== TESTS COMPLETED ===");
     }
 
     private static void runReverseStringTests() {
-        System.out.println("1. REVERSE STRING TESZTEK:");
+        System.out.println("1. REVERSE STRING TESTS:");
         
         // Test 1: Normál string
-        testReverse("hello", "olleh", "normál string");
+        testReverse("hello", "olleh", "normal string");
         
-        // Test 2: Üres string
-        testReverse("", "", "üres string");
+        // Test 2: Empty string
+        testReverse("", "", "empty string");
         
         // Test 3: Egy karakter
-        testReverse("a", "a", "egy karakter");
+        testReverse("a", "a", "single character");
         
         // Test 4: Palindróma
-        testReverse("racecar", "racecar", "palindróma");
+        testReverse("racecar", "racecar", "palindrome");
         
         System.out.println();
     }
 
     private static void runCountVowelsTests() {
-        System.out.println("2. COUNT VOWELS TESZTEK:");
+        System.out.println("2. COUNT VOWELS TESTS:");
         
         // Test 1: Normál szó
-        testCountVowels("hello", 2, "normál szó");
+        testCountVowels("hello", 2, "normal word");
         
-        // Test 2: Csak mássalhangzók
-        testCountVowels("bcdfg", 0, "csak mássalhangzók");
+        // Test 2: Only consonants
+        testCountVowels("bcdfg", 0, "only consonants");
         
-        // Test 3: Csak magánhangzók
-        testCountVowels("aeiou", 5, "csak magánhangzók");
+        // Test 3: Only vowels
+        testCountVowels("aeiou", 5, "only vowels");
         
-        // Test 4: Kevert nagy/kisbetűk
-        testCountVowels("Hello World", 3, "kevert nagy/kisbetűk");
+        // Test 4: Mixed upper/lowercase
+        testCountVowels("Hello World", 3, "mixed case letters");
         
         System.out.println();
     }
 
     private static void runIsPalindromeTests() {
-        System.out.println("3. PALINDROME TESZTEK:");
+        System.out.println("3. PALINDROME TESTS:");
         
         // Test 1: Igaz palindróma
-        testPalindrome("racecar", true, "igaz palindróma");
+        testPalindrome("racecar", true, "true palindrome");
         
         // Test 2: Hamis eset
-        testPalindrome("hello", false, "hamis eset");
+        testPalindrome("hello", false, "false case");
         
         // Test 3: Egy karakter
-        testPalindrome("a", true, "egy karakter");
+        testPalindrome("a", true, "single character");
         
-        // Test 4: Üres string
-        testPalindrome("", true, "üres string");
+        // Test 4: Empty string
+        testPalindrome("", true, "empty string");
         
-        // Test 5: Kevert betűk
-        testPalindrome("RaceCar", true, "kevert nagy/kisbetűk");
+        // Test 5: Mixed letters
+        testPalindrome("RaceCar", true, "mixed case letters");
         
         System.out.println();
     }
 
-    // Segéd metódusok a teszteléshez
+    // Helper methods for testing
     private static void testReverse(String input, String expected, String description) {
         String result = reverseString(input);
         String status = expected.equals(result) ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: '%s' -> '%s' (várt: '%s')\n", 
+        System.out.printf("   %s - %s: '%s' -> '%s' (expected: '%s')\n", 
                          status, description, input, result, expected);
     }
 
     private static void testCountVowels(String input, int expected, String description) {
         int result = countVowels(input);
         String status = expected == result ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: '%s' -> %d (várt: %d)\n", 
+        System.out.printf("   %s - %s: '%s' -> %d (expected: %d)\n", 
                          status, description, input, result, expected);
     }
 
     private static void testPalindrome(String input, boolean expected, String description) {
         boolean result = isPalindrome(input);
         String status = expected == result ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: '%s' -> %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: '%s' -> %s (expected: %s)\n", 
                          status, description, input, result, expected);
     }
 }

@@ -2,47 +2,47 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Day 7 - Záró projekt: Online áruház rendszer
+ * Day 7 - Final Project: Online Store System
  * 
- * Ez a fájl egy komplex záró projektet tartalmaz amely összeköti az eddig tanultakat.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains a complex final project that combines everything learned so far.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class FinalProject {
 
     /**
-     * 1) FELADAT: Product osztály létrehozása
+     * 1) TASK: Create Product Class
      * 
-     * Cél: Hozz létre egy Product osztályt amely egy áruház terméket reprezentál
+     * Goal: Create a Product class that represents a store product
      * 
      * Követelmények:
-     * - id (int) - egyedi azonosító
-     * - name (String) - termék neve
-     * - category (String) - kategória (pl. "Electronics", "Books")
-     * - price (double) - ár
-     * - stock (int) - raktárkészlet
+     * - id (int) - unique identifier
+     * - name (String) - product name
+     * - category (String) - category (e.g. "Electronics", "Books")
+     * - price (double) - price
+     * - stock (int) - inventory stock
      * 
-     * Metódusok:
-     * - Konstruktor az összes mezővel
-     * - Getterek és setterek
-     * - toString metódus
-     * - equals és hashCode (id alapján)
+     * Methods:
+     * - Constructor with all fields
+     * - Getters and setters
+     * - toString method
+     * - equals and hashCode (based on id)
      */
     public static class Product {
-        // TODO: Implementáld itt a Product osztályt
+        // TODO: Implement the Product class here
         
         public Product(int id, String name, String category, double price, int stock) {
-            // TODO: Konstruktor implementálása
+            // TODO: Implement constructor
         }
         
-        // TODO: Getterek
+        // TODO: Getters
         public int getId() { return 0; }
         public String getName() { return null; }
         public String getCategory() { return null; }
         public double getPrice() { return 0.0; }
         public int getStock() { return 0; }
         
-        // TODO: Setterek (ár és készlet frissítéséhez)
+        // TODO: Setters (for price and stock updates)
         public void setPrice(double price) { }
         public void setStock(int stock) { }
         
@@ -66,7 +66,7 @@ public class FinalProject {
     }
 
     /**
-     * 2) FELADAT: Store osztály - áruház kezelő
+     * 2) TASK: Store class - shop manager
      * 
      * Cél: Hozz létre egy Store osztályt amely termékeket kezel
      * 
@@ -182,9 +182,9 @@ public class FinalProject {
     }
 
     /**
-     * 3) FELADAT: Gyors kódolási kihívások
+     * 3) TASK: Quick coding challenges
      * 
-     * Implementáld újra gyorsan ezeket a korábbi feladatokat
+     * Re-implement these previous tasks quickly
      * (Szimulálva egy 15 perces interview kört)
      */
     
@@ -236,7 +236,7 @@ public class FinalProject {
         // Test 2: Setterek
         product.setPrice(899.99);
         product.setStock(3);
-        testProductProperties(product, 1, "Laptop", "Electronics", 899.99, 3, "setterek után");
+        testProductProperties(product, 1, "Laptop", "Electronics", 899.99, 3, "after setters");
         
         // Test 3: equals és hashCode
         Product product2 = new Product(1, "Different Name", "Different Category", 1.0, 1);
@@ -288,7 +288,7 @@ public class FinalProject {
     }
 
     private static void runSpeedChallenges() {
-        System.out.println("3. GYORS KÓDOLÁSI KIHÍVÁSOK:");
+        System.out.println("3. QUICK CODING CHALLENGES:");
         
         // Speed Challenge 1: FizzBuzz
         String[] fizzBuzzResult = speedFizzBuzz(15);

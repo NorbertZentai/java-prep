@@ -3,16 +3,16 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * JavaPracticeProject - Java gyakorló projekt szervezés
+ * JavaPracticeProject - Java practice project organization
  * 
- * Ez az osztály segít a Java tanulás szervezésében, haladás követésében
- * és interview felkészülés menedzselésében.
+ * This class helps with organizing Java learning, tracking progress
+ * and managing interview preparation.
  */
 public class JavaPracticeProject {
 
     /**
-     * FELADAT 1: Napi rutin követő (Daily Routine Tracker)
-     * Cél: Napi feladatok szervezése és követése
+     * TASK 1: Daily Routine Tracker
+     * Goal: Daily task organization and tracking
      */
     public static class DailyRoutineTracker {
         private Map<LocalDate, List<String>> dailyTasks;
@@ -22,21 +22,21 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Feladat hozzáadása adott naphoz
+         * Add task to given date
          */
         public void addTask(LocalDate date, String task) {
             dailyTasks.computeIfAbsent(date, k -> new ArrayList<>()).add(task);
         }
 
         /**
-         * Adott nap feladatainak lekérése
+         * Get tasks for given date
          */
         public List<String> getTasksForDate(LocalDate date) {
             return dailyTasks.getOrDefault(date, new ArrayList<>());
         }
 
         /**
-         * Összes feladat számának lekérése
+         * Get total task count
          */
         public int getTotalTaskCount() {
             return dailyTasks.values().stream()
@@ -45,14 +45,14 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Mai feladatok kiírása
+         * Print today's tasks
          */
         public void printTodaysTasks() {
             LocalDate today = LocalDate.now();
             List<String> tasks = getTasksForDate(today);
-            System.out.println("=== Mai feladatok (" + today + ") ===");
+            System.out.println("=== Today's tasks (" + today + ") ===");
             if (tasks.isEmpty()) {
-                System.out.println("Nincsenek feladatok ma.");
+                System.out.println("No tasks for today.");
             } else {
                 for (int i = 0; i < tasks.size(); i++) {
                     System.out.println((i + 1) + ". " + tasks.get(i));
@@ -62,8 +62,8 @@ public class JavaPracticeProject {
     }
 
     /**
-     * FELADAT 2: Tanulási témák enumeráció
-     * Cél: Java tanulási témák strukturált kezelése
+     * TASK 2: Study topics enumeration
+     * Goal: Structured handling of Java study topics
      */
     public enum StudyTopic {
         CORE_JAVA("Core Java", 1),
@@ -93,7 +93,7 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Adott naphoz tartozó témák lekérése
+         * Get topics for given day
          */
         public static List<StudyTopic> getTopicsForDay(int day) {
             return Arrays.stream(StudyTopic.values())
@@ -108,8 +108,8 @@ public class JavaPracticeProject {
     }
 
     /**
-     * FELADAT 3: Tanulási statisztikák követése
-     * Cél: Haladás mérése és elemzése
+     * TASK 3: Learning statistics tracking
+     * Goal: Progress measurement and analysis
      */
     public static class LearningStatistics {
         private Map<StudyTopic, Integer> topicProgress;
@@ -119,17 +119,17 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Haladás rögzítése egy témában (százalék)
+         * Record progress in a topic (percentage)
          */
         public void recordProgress(StudyTopic topic, int progressPercent) {
             if (progressPercent < 0 || progressPercent > 100) {
-                throw new IllegalArgumentException("A haladás 0-100 között kell legyen!");
+                throw new IllegalArgumentException("Progress must be between 0-100!");
             }
             topicProgress.merge(topic, progressPercent, Integer::sum);
         }
 
         /**
-         * Összes haladás összesítése
+         * Total progress summary
          */
         public int getTotalProgress() {
             return topicProgress.values().stream()
@@ -138,7 +138,7 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Legjobb téma meghatározása
+         * Determine best topic
          */
         public StudyTopic getBestTopic() {
             return topicProgress.entrySet().stream()
@@ -148,7 +148,7 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Átlagos haladás számítása
+         * Calculate average progress
          */
         public double getAverageProgress() {
             if (topicProgress.isEmpty()) {
@@ -158,12 +158,12 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Haladási jelentés kiírása
+         * Print progress report
          */
         public void printProgressReport() {
-            System.out.println("=== TANULÁSI HALADÁS JELENTÉS ===");
+            System.out.println("=== LEARNING PROGRESS REPORT ===");
             if (topicProgress.isEmpty()) {
-                System.out.println("Még nincs rögzített haladás.");
+                System.out.println("No progress recorded yet.");
                 return;
             }
 
@@ -174,18 +174,18 @@ public class JavaPracticeProject {
                             entry.getKey().getDescription(), entry.getValue())
                     );
 
-            System.out.printf("\nÖsszes haladás: %d pont\n", getTotalProgress());
-            System.out.printf("Átlagos haladás: %.2f%%\n", getAverageProgress());
+            System.out.printf("\nTotal progress: %d points\n", getTotalProgress());
+            System.out.printf("Average progress: %.2f%%\n", getAverageProgress());
             StudyTopic best = getBestTopic();
             if (best != null) {
-                System.out.printf("Legjobb téma: %s\n", best.getDescription());
+                System.out.printf("Best topic: %s\n", best.getDescription());
             }
         }
     }
 
     /**
-     * FELADAT 4: Interview felkészülés kezelő
-     * Cél: Programozó interview feladatok nyomon követése
+     * TASK 4: Interview preparation manager
+     * Goal: Programming interview problems tracking
      */
     public static class InterviewPreparation {
         private Set<String> solvedProblems;
@@ -205,7 +205,7 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Feladat megoldottnak jelölése
+         * Mark problem as solved
          */
         public void markAsSolved(String problemName) {
             if (allProblems.contains(problemName)) {
@@ -214,7 +214,7 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Hátralevő feladatok listája
+         * List of remaining problems
          */
         public List<String> getRemainingProblems() {
             return allProblems.stream()
@@ -223,7 +223,7 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Befejezettségi százalék
+         * Completion percentage
          */
         public double getCompletionPercentage() {
             if (allProblems.isEmpty()) {
@@ -233,64 +233,64 @@ public class JavaPracticeProject {
         }
 
         /**
-         * Következő feladat javaslat
+         * Next problem suggestion
          */
         public String getNextProblemSuggestion() {
             List<String> remaining = getRemainingProblems();
-            return remaining.isEmpty() ? "Minden feladat kész!" : remaining.get(0);
+            return remaining.isEmpty() ? "All problems completed!" : remaining.get(0);
         }
 
         /**
-         * Interview felkészültség jelentés
+         * Interview preparation report
          */
         public void printPreparationStatus() {
-            System.out.println("=== INTERVIEW FELKÉSZÜLÉS ÁLLAPOT ===");
-            System.out.printf("Befejezett: %d/%d (%.1f%%)\n", 
+            System.out.println("=== INTERVIEW PREPARATION STATUS ===");
+            System.out.printf("Completed: %d/%d (%.1f%%)\n", 
                 solvedProblems.size(), allProblems.size(), getCompletionPercentage());
             
-            System.out.println("\nMegoldott feladatok:");
+            System.out.println("\nSolved problems:");
             solvedProblems.forEach(problem -> System.out.println("✓ " + problem));
             
-            System.out.println("\nHátralevő feladatok:");
+            System.out.println("\nRemaining problems:");
             getRemainingProblems().forEach(problem -> System.out.println("○ " + problem));
             
             if (!getRemainingProblems().isEmpty()) {
-                System.out.println("\nKövetkező ajánlott: " + getNextProblemSuggestion());
+                System.out.println("\nNext recommended: " + getNextProblemSuggestion());
             }
         }
     }
 
     /**
-     * FŐPROGRAM - Projekt demo és tesztelés
+     * MAIN PROGRAM - Project demo and testing
      */
     public static void main(String[] args) {
-        System.out.println("=== JAVA GYAKORLÓ PROJEKT DEMO ===\n");
+        System.out.println("=== JAVA PRACTICE PROJECT DEMO ===\n");
 
-        // 1. Napi rutin tracker demo
-        System.out.println("1. NAPI FELADAT TRACKER:");
+        // 1. Daily routine tracker demo
+        System.out.println("1. DAILY TASK TRACKER:");
         DailyRoutineTracker tracker = new DailyRoutineTracker();
         LocalDate today = LocalDate.now();
         
-        tracker.addTask(today, "Java alapok gyakorlása");
-        tracker.addTask(today, "Tesztek írása");
-        tracker.addTask(today, "Kód review");
-        tracker.addTask(today.plusDays(1), "Algoritmusok tanulása");
+        tracker.addTask(today, "Java basics practice");
+        tracker.addTask(today, "Write tests");
+        tracker.addTask(today, "Code review");
+        tracker.addTask(today.plusDays(1), "Learn algorithms");
         
         tracker.printTodaysTasks();
-        System.out.println("Összes feladat: " + tracker.getTotalTaskCount() + "\n");
+        System.out.println("Total tasks: " + tracker.getTotalTaskCount() + "\n");
 
-        // 2. Tanulási témák demo
-        System.out.println("2. TANULÁSI TÉMÁK:");
-        System.out.println("1. napi témák:");
+        // 2. Study topics demo
+        System.out.println("2. STUDY TOPICS:");
+        System.out.println("Day 1 topics:");
         StudyTopic.getTopicsForDay(1).forEach(System.out::println);
         
-        System.out.println("Összes téma:");
+        System.out.println("All topics:");
         Arrays.stream(StudyTopic.values())
               .forEach(topic -> System.out.println(topic));
         System.out.println();
 
-        // 3. Haladás statisztikák demo
-        System.out.println("3. TANULÁSI STATISZTIKÁK:");
+        // 3. Progress statistics demo
+        System.out.println("3. LEARNING STATISTICS:");
         LearningStatistics stats = new LearningStatistics();
         stats.recordProgress(StudyTopic.CORE_JAVA, 85);
         stats.recordProgress(StudyTopic.OOP, 92);
@@ -300,8 +300,8 @@ public class JavaPracticeProject {
         stats.printProgressReport();
         System.out.println();
 
-        // 4. Interview felkészülés demo
-        System.out.println("4. INTERVIEW FELKÉSZÜLÉS:");
+        // 4. Interview preparation demo
+        System.out.println("4. INTERVIEW PREPARATION:");
         InterviewPreparation prep = new InterviewPreparation();
         prep.markAsSolved("FizzBuzz");
         prep.markAsSolved("Missing Number");

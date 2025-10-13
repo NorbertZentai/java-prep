@@ -1,36 +1,37 @@
 import java.util.*;
 
 /**
- * Day 3 - OOP alapok (Osztályok és metódusok)
+ * Day 3 - OOP Basics (Classes and Methods)
  * 
- * Ez a fájl objektum-orientált programozás alapjait gyakorolja.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file practices the basics of object-oriented programming.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class OOPBasics {
 
     /**
-     * 1) FELADAT: Book osztály létrehozása
+     * 1) TASK: Create Book Class
      * 
-     * Cél: Hozz létre egy Book osztályt a következő tulajdonságokkal:
+     * Goal: Create a Book class with the following properties:
      * - title (String)
      * - author (String) 
      * - price (double)
      * - pages (int)
      * 
-     * Követelmények:
-     * - Konstruktor az összes mezőhöz
-     * - Getter metódusok
-     * - toString metódus
+     * Requirements:
+     * - Private fields for title, author, price, pages
+     * - Constructor with all parameters
+     * - Getters for all fields (no setters needed)
+     * - toString() method for nice output
      */
     public static class Book {
-        // TODO: Implementáld itt a Book osztályt
+        // TODO: Implement the Book class here
         
         public Book(String title, String author, double price, int pages) {
-            // TODO: Konstruktor implementálása
+            // TODO: Implement constructor
         }
         
-        // TODO: Getter metódusok
+        // TODO: Getter methods
         public String getTitle() { return null; }
         public String getAuthor() { return null; }
         public double getPrice() { return 0.0; }
@@ -38,133 +39,133 @@ public class OOPBasics {
         
         @Override
         public String toString() {
-            // TODO: toString implementálása
+            // TODO: Implement toString
             return "";
         }
     }
 
     /**
-     * 2) FELADAT: Library osztály létrehozása
+     * 2) TASK: Create Library Class
      * 
-     * Cél: Hozz létre egy Library osztályt amely kezeli a könyveket
+     * Goal: Create a Library class that manages books
      * 
      * Követelmények:
-     * - Tárolja a könyveket List<Book>-ban
-     * - addBook(Book book) metódus
-     * - findBooksByAuthor(String author) metódus
-     * - getTotalPrice() metódus
-     * - getBookCount() metódus
+     * - Store books in List<Book>
+     * - addBook(Book book) method
+     * - findBooksByAuthor(String author) method
+     * - getTotalPrice() method
+     * - getBookCount() method
      */
     public static class Library {
-        // TODO: Implementáld itt a Library osztályt
+        // TODO: Implement the Library class here
         
         public Library() {
-            // TODO: Konstruktor implementálása
+            // TODO: Implement constructor
         }
         
         public void addBook(Book book) {
-            // TODO: Könyv hozzáadása
+            // TODO: Add book
         }
         
         public List<Book> findBooksByAuthor(String author) {
-            // TODO: Szerző alapján keresés
+            // TODO: Search by author
             return new ArrayList<>();
         }
         
         public double getTotalPrice() {
-            // TODO: Összes könyv árának összege
+            // TODO: Sum of all book prices
             return 0.0;
         }
         
         public int getBookCount() {
-            // TODO: Könyvek számának visszaadása
+            // TODO: Return number of books
             return 0;
         }
         
         public List<Book> getAllBooks() {
-            // TODO: Összes könyv visszaadása
+            // TODO: Return all books
             return new ArrayList<>();
         }
     }
 
     /**
-     * 3) FELADAT: Student osztály létrehozása
+     * 3) TASK: Create Student Class
      * 
-     * Cél: Hozz létre egy Student osztályt jegyek kezelésére
+     * Goal: Create a Student class for managing grades
      * 
      * Követelmények:
      * - name (String)
      * - grades (List<Integer>)
-     * - addGrade(int grade) metódus
-     * - getAverage() metódus
-     * - getGradeCount() metódus
+     * - addGrade(int grade) method
+     * - getAverage() method
+     * - getGradeCount() method
      */
     public static class Student {
-        // TODO: Implementáld itt a Student osztályt
+        // TODO: Implement the Student class here
         
         public Student(String name) {
-            // TODO: Konstruktor implementálása
+            // TODO: Implement constructor
         }
         
         public String getName() { return null; }
         
         public void addGrade(int grade) {
-            // TODO: Jegy hozzáadása (1-5 között)
+            // TODO: Add grade (between 1-5)
         }
         
         public double getAverage() {
-            // TODO: Átlag számítása
+            // TODO: Calculate average
             return 0.0;
         }
         
         public int getGradeCount() {
-            // TODO: Jegyek számának visszaadása
+            // TODO: Return number of grades
             return 0;
         }
         
         public List<Integer> getGrades() {
-            // TODO: Összes jegy visszaadása
+            // TODO: Return all grades
             return new ArrayList<>();
         }
     }
 
     // ===============================
-    // TESZTEK - Ne módosítsd ezeket!
+    // TESTS - Don't modify these!
     // ===============================
 
     public static void main(String[] args) {
-        System.out.println("=== OOP ALAPOK TESZTEK ===\n");
+        System.out.println("=== OOP BASICS TESTS ===\n");
         
         runBookTests();
         runLibraryTests();
         runStudentTests();
         
-        System.out.println("\n=== TESZTEK BEFEJEZVE ===");
+        System.out.println("\n=== TESTS COMPLETED ===");
     }
 
     private static void runBookTests() {
-        System.out.println("1. BOOK OSZTÁLY TESZTEK:");
+        System.out.println("1. BOOK CLASS TESTS:");
         
         // Test 1: Konstruktor és getterek
         Book book = new Book("1984", "George Orwell", 2500.0, 328);
-        testBookProperties(book, "1984", "George Orwell", 2500.0, 328, "konstruktor és getterek");
+        testBookProperties(book, "1984", "George Orwell", 2500.0, 328, "constructor and getters");
         
         // Test 2: toString nem üres
         String toStringResult = book.toString();
         boolean toStringWorks = toStringResult != null && !toStringResult.isEmpty() && !toStringResult.equals("");
-        System.out.printf("   %s - toString működik: '%s'\n", 
+        System.out.printf("   %s - toString works: '%s'\n", 
                          toStringWorks ? "✅ PASS" : "❌ FAIL", toStringResult);
         
         System.out.println();
     }
 
     private static void runLibraryTests() {
-        System.out.println("2. LIBRARY OSZTÁLY TESZTEK:");
+        System.out.println("2. LIBRARY CLASS TESTS:");
         
         Library library = new Library();
         
         // Test 1: Üres könyvtár
-        testLibraryState(library, 0, 0.0, "üres könyvtár");
+        testLibraryState(library, 0, 0.0, "empty library");
         
         // Test 2: Könyvek hozzáadása
         Book book1 = new Book("1984", "George Orwell", 2500.0, 328);
@@ -175,28 +176,28 @@ public class OOPBasics {
         library.addBook(book2);
         library.addBook(book3);
         
-        testLibraryState(library, 3, 7500.0, "3 könyv hozzáadása után");
+        testLibraryState(library, 3, 7500.0, "after adding 3 books");
         
         // Test 3: Keresés szerző alapján
         List<Book> orwellBooks = library.findBooksByAuthor("George Orwell");
-        testAuthorSearch(orwellBooks, 2, "George Orwell könyvek keresése");
+        testAuthorSearch(orwellBooks, 2, "George Orwell books search");
         
         List<Book> huxleyBooks = library.findBooksByAuthor("Aldous Huxley");
-        testAuthorSearch(huxleyBooks, 1, "Aldous Huxley könyvek keresése");
+        testAuthorSearch(huxleyBooks, 1, "Aldous Huxley books search");
         
         List<Book> notFound = library.findBooksByAuthor("Unknown Author");
-        testAuthorSearch(notFound, 0, "nem létező szerző keresése");
+        testAuthorSearch(notFound, 0, "unknown author search");
         
         System.out.println();
     }
 
     private static void runStudentTests() {
-        System.out.println("3. STUDENT OSZTÁLY TESZTEK:");
+        System.out.println("3. STUDENT CLASS TESTS:");
         
         Student student = new Student("Kovács János");
         
         // Test 1: Új diák
-        testStudentState(student, "Kovács János", 0, 0.0, "új diák");
+        testStudentState(student, "Kovács János", 0, 0.0, "new student");
         
         // Test 2: Jegyek hozzáadása
         student.addGrade(5);
@@ -204,18 +205,18 @@ public class OOPBasics {
         student.addGrade(3);
         student.addGrade(5);
         
-        testStudentState(student, "Kovács János", 4, 4.25, "jegyek hozzáadása után");
+        testStudentState(student, "Kovács János", 4, 4.25, "after adding grades");
         
         // Test 3: További jegyek
         student.addGrade(2);
         student.addGrade(4);
         
-        testStudentState(student, "Kovács János", 6, 3.83, "további jegyek után");
+        testStudentState(student, "Kovács János", 6, 3.83, "after additional grades");
         
         System.out.println();
     }
 
-    // Segéd metódusok a teszteléshez
+    // Helper methods for testing
     private static void testBookProperties(Book book, String expectedTitle, String expectedAuthor, 
                                          double expectedPrice, int expectedPages, String description) {
         boolean titleOk = expectedTitle.equals(book.getTitle());
@@ -240,7 +241,7 @@ public class OOPBasics {
         boolean allOk = countOk && totalOk;
         
         String status = allOk ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: könyvek száma:%d össz ár:%.0f\n", 
+        System.out.printf("   %s - %s: book count:%d total price:%.0f\n", 
                          status, description, count, total);
     }
 
@@ -249,7 +250,7 @@ public class OOPBasics {
         boolean isCorrect = count == expectedCount;
         
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: találatok száma:%d (várt:%d)\n", 
+        System.out.printf("   %s - %s: found:%d (expected:%d)\n", 
                          status, description, count, expectedCount);
     }
 
@@ -265,7 +266,7 @@ public class OOPBasics {
         boolean allOk = nameOk && countOk && avgOk;
         
         String status = allOk ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: név:%s jegyek száma:%d átlag:%.2f\n", 
+        System.out.printf("   %s - %s: name:%s grade count:%d average:%.2f\n", 
                          status, description, name, gradeCount, average);
     }
 }

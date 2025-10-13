@@ -1,24 +1,24 @@
 import java.util.*;
 
 /**
- * Interview Problems - Klasszikus algoritmusok
+ * Interview Problems - Classic Algorithms
  * 
- * Ez a fájl gyakori interview feladatok klasszikus algoritmusait tartalmazza.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains classic algorithms for common interview problems.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class ClassicAlgorithms {
 
     /**
-     * 1) FELADAT: FizzBuzz
+     * 1) TASK: FizzBuzz
      * 
-     * Cél: Írj egy programot ami 1-től n-ig számol, de:
-     * - 3-mal osztható számoknál "Fizz"-t ír
-     * - 5-tel osztható számoknál "Buzz"-t ír  
-     * - Mindkettővel osztható számoknál "FizzBuzz"-t ír
-     * - Egyébként a számot írja
+     * Goal: Write a program that counts from 1 to n, but:
+     * - For numbers divisible by 3, write "Fizz"
+     * - For numbers divisible by 5, write "Buzz"  
+     * - For numbers divisible by both, write "FizzBuzz"
+     * - Otherwise write the number
      * 
-     * Példa: fizzBuzz(15) -> ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
+     * Example: fizzBuzz(15) -> ["1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
      */
     public static String[] fizzBuzz(int n) {
         // TODO: Implementáld itt a megoldást
@@ -26,75 +26,75 @@ public class ClassicAlgorithms {
     }
 
     /**
-     * 2) FELADAT: Hiányzó szám keresése
+     * 2) TASK: Find Missing Number
      * 
-     * Cél: Egy 0-tól n-ig tartó tömben pontosan egy szám hiányzik. Keresd meg!
+     * Goal: In an array from 0 to n, exactly one number is missing. Find it!
      * Követelmények:
-     * - A tömb hossza n (tehát n+1 számból egy hiányzik)
-     * - A számok 0-tól n-ig vannak, de egy hiányzik
-     * - Hatékony megoldást keress (ne brute force)
+     * - Array length is n (so one number from n+1 numbers is missing)
+     * - Numbers are from 0 to n, but one is missing
+     * - Find efficient solution (not brute force)
      * 
-     * Példa: findMissingNumber([3, 0, 1], 3) -> 2
+     * Example: findMissingNumber([3, 0, 1], 3) -> 2
      */
     public static int findMissingNumber(int[] nums, int n) {
-        // TODO: Implementáld itt a megoldást (összeg formula használható)
+        // TODO: Implement your solution here (sum formula can be used)
         return -1;
     }
 
     /**
-     * 3) FELADAT: Duplikátum keresése
+     * 3) TASK: Find duplicate
      * 
-     * Cél: Keresd meg azt az elemet amely többször szerepel a tömbben
-     * Követelmények:
-     * - A tömb 1-től n-ig tartalmaz számokat
-     * - Pontosan egy szám ismétlődik
-     * - Hatékony megoldást keress (Set vagy ciklus-detektálás)
+     * Goal: Find the element that appears more than once in the array
+     * Requirements:
+     * - Array contains numbers from 1 to n
+     * - Exactly one number repeats
+     * - Find efficient solution (Set or cycle detection)
      * 
-     * Példa: findDuplicate([1, 3, 4, 2, 2]) -> 2
+     * Example: findDuplicate([1, 3, 4, 2, 2]) -> 2
      */
     public static int findDuplicate(int[] nums) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return -1;
     }
 
     /**
-     * 4) FELADAT: Számok cseréje ideiglenes változó nélkül
+     * 4) TASK: Swap numbers without temporary variable
      * 
-     * Cél: Cseréld fel két számot anélkül, hogy ideiglenes változót használnál
-     * Követelmények:
-     * - Használhatsz aritmetikai műveleteket
-     * - Vagy XOR bitwise műveletet
-     * - Térj vissza a megcserélt értékekkel
+     * Goal: Swap two numbers without using a temporary variable
+     * Requirements:
+     * - You can use arithmetic operations
+     * - Or XOR bitwise operation
+     * - Return the swapped values
      * 
-     * Példa: swapWithoutTemp(5, 10) -> [10, 5]
+     * Example: swapWithoutTemp(5, 10) -> [10, 5]
      */
     public static int[] swapWithoutTemp(int a, int b) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return new int[]{a, b};
     }
 
     /**
-     * 5) FELADAT: Balanced Parentheses (Kiegyensúlyozott zárójelek)
+     * 5) TASK: Balanced Parentheses
      * 
-     * Cél: Ellenőrizd, hogy egy stringben a zárójelek kiegyensúlyozottak-e
-     * Követelmények:
-     * - Támogatott zárójelek: (), [], {}
-     * - Minden nyitó zárójel után megfelelő záró zárójel kell jöjjön
-     * - A sorrend is számít
+     * Goal: Check if parentheses are balanced in a string
+     * Requirements:
+     * - Supported brackets: (), [], {}
+     * - Every opening bracket must have a corresponding closing bracket
+     * - Order matters too
      * 
-     * Példa: isValidParentheses("({[]})") -> true, isValidParentheses("({[}])") -> false
+     * Example: isValidParentheses("({[]})") -> true, isValidParentheses("({[}])") -> false
      */
     public static boolean isValidParentheses(String s) {
-        // TODO: Implementáld itt a megoldást (Stack használatával)
+        // TODO: Implement your solution here (using Stack)
         return false;
     }
 
     // ===============================
-    // TESZTEK - Ne módosítsd ezeket!
+    // TESTS - Do not modify these!
     // ===============================
 
     public static void main(String[] args) {
-        System.out.println("=== KLASSZIKUS ALGORITMUSOK TESZTEK ===\n");
+        System.out.println("=== CLASSIC ALGORITHMS TESTS ===\n");
         
         runFizzBuzzTests();
         runMissingNumberTests();
@@ -102,18 +102,18 @@ public class ClassicAlgorithms {
         runSwapWithoutTempTests();
         runValidParenthesesTests();
         
-        System.out.println("\n=== TESZTEK BEFEJEZVE ===");
+        System.out.println("\n=== TESTS COMPLETED ===");
     }
 
     private static void runFizzBuzzTests() {
-        System.out.println("1. FIZZBUZZ TESZTEK:");
+        System.out.println("1. FIZZBUZZ TESTS:");
         
-        // Test 1: Kis szám
+        // Test 1: Small number
         String[] result1 = fizzBuzz(5);
         String[] expected1 = {"1", "2", "Fizz", "4", "Buzz"};
         testStringArray(result1, expected1, "n=5");
         
-        // Test 2: 15-ig (FizzBuzz is benne)
+        // Test 2: Up to 15 (includes FizzBuzz)
         String[] result2 = fizzBuzz(15);
         String[] expected2 = {"1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"};
         testStringArray(result2, expected2, "n=15");
@@ -122,90 +122,90 @@ public class ClassicAlgorithms {
     }
 
     private static void runMissingNumberTests() {
-        System.out.println("2. HIÁNYZÓ SZÁM TESZTEK:");
+        System.out.println("2. MISSING NUMBER TESTS:");
         
-        // Test 1: Hiányzó 2
-        testMissingNumber(new int[]{3, 0, 1}, 3, 2, "hiányzó 2");
+        // Test 1: Missing 2
+        testMissingNumber(new int[]{3, 0, 1}, 3, 2, "missing 2");
         
-        // Test 2: Hiányzó 0
-        testMissingNumber(new int[]{1, 2}, 2, 0, "hiányzó 0");
+        // Test 2: Missing 0
+        testMissingNumber(new int[]{1, 2}, 2, 0, "missing 0");
         
-        // Test 3: Hiányzó utolsó
-        testMissingNumber(new int[]{0, 1}, 2, 2, "hiányzó utolsó");
+        // Test 3: Missing last
+        testMissingNumber(new int[]{0, 1}, 2, 2, "missing last");
         
-        // Test 4: Nagyobb tömb
-        testMissingNumber(new int[]{0, 1, 3, 4, 5}, 5, 2, "nagyobb tömb");
+        // Test 4: Larger array
+        testMissingNumber(new int[]{0, 1, 3, 4, 5}, 5, 2, "larger array");
         
         System.out.println();
     }
 
     private static void runFindDuplicateTests() {
-        System.out.println("3. DUPLIKÁTUM KERESÉS TESZTEK:");
+        System.out.println("3. DUPLICATE FINDING TESTS:");
         
-        // Test 1: Egyszerű eset
-        testFindDuplicate(new int[]{1, 3, 4, 2, 2}, 2, "egyszerű eset");
+        // Test 1: Simple case
+        testFindDuplicate(new int[]{1, 3, 4, 2, 2}, 2, "simple case");
         
-        // Test 2: Első elem ismétlődik
-        testFindDuplicate(new int[]{3, 1, 3, 4, 2}, 3, "első elem ismétlődik");
+        // Test 2: First element repeats
+        testFindDuplicate(new int[]{3, 1, 3, 4, 2}, 3, "first element repeats");
         
-        // Test 3: Utolsó elem ismétlődik
-        testFindDuplicate(new int[]{1, 1}, 1, "utolsó elem ismétlődik");
+        // Test 3: Last element repeats
+        testFindDuplicate(new int[]{1, 1}, 1, "last element repeats");
         
         System.out.println();
     }
 
     private static void runSwapWithoutTempTests() {
-        System.out.println("4. CSERE TEMP NÉLKÜL TESZTEK:");
+        System.out.println("4. SWAP WITHOUT TEMP TESTS:");
         
-        // Test 1: Pozitív számok
-        testSwap(5, 10, "pozitív számok");
+        // Test 1: Positive numbers
+        testSwap(5, 10, "positive numbers");
         
-        // Test 2: Negatív számok
-        testSwap(-3, -7, "negatív számok");
+        // Test 2: Negative numbers
+        testSwap(-3, -7, "negative numbers");
         
-        // Test 3: Kevert számok
-        testSwap(-5, 8, "kevert számok");
+        // Test 3: Mixed numbers
+        testSwap(-5, 8, "mixed numbers");
         
         System.out.println();
     }
 
     private static void runValidParenthesesTests() {
-        System.out.println("5. KIEGYENSÚLYOZOTT ZÁRÓJELEK TESZTEK:");
+        System.out.println("5. BALANCED PARENTHESES TESTS:");
         
-        // Test 1: Érvényes esetek
-        testValidParentheses("()", true, "egyszerű ()");
-        testValidParentheses("()[]{}", true, "vegyes típusok");
-        testValidParentheses("({[]})", true, "beágyazott");
-        testValidParentheses("", true, "üres string");
+        // Test 1: Valid cases
+        testValidParentheses("()", true, "simple ()");
+        testValidParentheses("()[]{}", true, "mixed types");
+        testValidParentheses("({[]})", true, "nested");
+        testValidParentheses("", true, "empty string");
         
-        // Test 2: Érvénytelen esetek
-        testValidParentheses("(]", false, "hibás párosítás");
-        testValidParentheses("([)]", false, "keresztezett");
-        testValidParentheses("((", false, "csak nyitó");
-        testValidParentheses("))", false, "csak záró");
+        // Test 2: Invalid cases
+        testValidParentheses("(]", false, "wrong pairing");
+        testValidParentheses("([)]", false, "crossed");
+        testValidParentheses("((", false, "only opening");
+        testValidParentheses("))", false, "only closing");
         
         System.out.println();
     }
 
-    // Segéd metódusok a teszteléshez
+    // Helper methods for testing
     private static void testStringArray(String[] result, String[] expected, String description) {
         boolean isCorrect = Arrays.equals(result, expected);
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: %s (expected: %s)\n", 
                          status, description, Arrays.toString(result), Arrays.toString(expected));
     }
 
     private static void testMissingNumber(int[] nums, int n, int expected, String description) {
         int result = findMissingNumber(nums, n);
         String status = result == expected ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s, n=%d -> %d (várt: %d)\n", 
+        System.out.printf("   %s - %s: %s, n=%d -> %d (expected: %d)\n", 
                          status, description, Arrays.toString(nums), n, result, expected);
     }
 
     private static void testFindDuplicate(int[] nums, int expected, String description) {
         int result = findDuplicate(nums);
         String status = result == expected ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s -> %d (várt: %d)\n", 
+        System.out.printf("   %s - %s: %s -> %d (expected: %d)\n", 
                          status, description, Arrays.toString(nums), result, expected);
     }
 
@@ -213,14 +213,14 @@ public class ClassicAlgorithms {
         int[] result = swapWithoutTemp(a, b);
         boolean isCorrect = result.length == 2 && result[0] == b && result[1] == a;
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: (%d, %d) -> [%d, %d] (várt: [%d, %d])\n", 
+        System.out.printf("   %s - %s: (%d, %d) -> [%d, %d] (expected: [%d, %d])\n", 
                          status, description, a, b, result[0], result[1], b, a);
     }
 
     private static void testValidParentheses(String input, boolean expected, String description) {
         boolean result = isValidParentheses(input);
         String status = result == expected ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: '%s' -> %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: '%s' -> %s (expected: %s)\n", 
                          status, description, input, result, expected);
     }
 }

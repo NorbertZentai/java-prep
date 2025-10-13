@@ -2,49 +2,49 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Day 7 - Összefoglaló kihívások és ismétlés
+ * Day 7 - Recap Challenges and Review
  * 
- * Ez a fájl a korábbi hetek anyagát foglalja össze kihívásszerű feladatokkal.
- * Minden feladat egy-egy témakört testez az eddigiek közül.
+ * This file summarizes previous weeks' material with challenging exercises.
+ * Each task tests one topic area from previous lessons.
  */
 
 public class RecapChallenges {
 
     /**
-     * 1) FELADAT: String manipuláció kombináció
+     * 1) TASK: String Manipulation Combination
      * 
-     * Cél: Kombináld a string műveleteket:
-     * - Távolítsd el az ismétlődő karaktereket
-     * - Fordítsd meg a stringet
-     * - Alakítsd nagybetűssé
+     * Goal: Combine string operations:
+     * - Remove duplicate characters
+     * - Reverse the string
+     * - Convert to uppercase
      * 
-     * Példa: processString("aabBcCc") -> "CBA"
+     * Example: processString("aabBcCc") -> "CBA"
      */
     public static String processString(String input) {
-        // TODO: Implementáld a kombinált string műveleteket
+        // TODO: Implement combined string operations
         return "";
     }
 
     /**
-     * 2) FELADAT: Komplex tömb műveletek
+     * 2) TASK: Complex Array Operations
      * 
      * Cél: 
-     * - Keresd meg a második legkisebb számot
-     * - Számold meg hány szám van az átlag felett
-     * - Add vissza egy tömbbel: [secondMin, countAboveAvg]
+     * - Find the second smallest number
+     * - Count how many numbers are above average
+     * - Return with array: [secondMin, countAboveAvg]
      * 
-     * Példa: arrayAnalysis([1, 5, 3, 9, 2]) -> [2, 2] (második legkisebb: 2, átlag felett: 5, 9)
+     * Example: arrayAnalysis([1, 5, 3, 9, 2]) -> [2, 2] (second smallest: 2, above average: 5, 9)
      */
     public static int[] arrayAnalysis(int[] numbers) {
-        // TODO: Implementáld a komplex tömb elemzést
+        // TODO: Implement complex array analysis
         return new int[]{0, 0};
     }
 
     /**
-     * 3) FELADAT: Map-alapú szó számláló
+     * 3) TASK: Map-based Word Counter
      * 
-     * Cél: Számold meg hány alkalommal szerepel minden szó egy mondatban
-     * - Alakítsd kisbetűssé
+     * Goal: Count how many times each word appears in a sentence
+     * - Convert to lowercase
      * - Távolítsd el az írásjeleket
      * - Számold a szavakat
      * 
@@ -56,7 +56,7 @@ public class RecapChallenges {
     }
 
     /**
-     * 4) FELADAT: Rekurzív faktoriális és Fibonacci kombináció
+     * 4) TASK: Recursive factorial and Fibonacci combination
      * 
      * Cél: Számítsd ki n! + fibonacci(n) értékét
      * - Használj rekurziót mindkettőhöz
@@ -82,7 +82,7 @@ public class RecapChallenges {
     }
 
     /**
-     * 5) FELADAT: Stream API mesterfeladat
+     * 5) TASK: Stream API master challenge
      * 
      * Cél: Adott egy lista személyekről (név, életkor), végezd el:
      * - Szűrd ki a 18+ személyeket
@@ -90,7 +90,7 @@ public class RecapChallenges {
      * - Számold meg mennyien vannak csoportonként
      * - Csak azokat a csoportokat tartsd meg ahol legalább 2 ember van
      * 
-     * Példa bemenetre: [("Alice", 25), ("Bob", 17), ("Anna", 30), ("Charlie", 22)]
+     * Example input: [("Alice", 25), ("Bob", 17), ("Anna", 30), ("Charlie", 22)]
      * Kimenet: {"A": 2} (Alice és Anna 18+, és "A"-val kezdődnek, 2-en vannak)
      */
     public static class Person {
@@ -117,7 +117,7 @@ public class RecapChallenges {
     }
 
     /**
-     * 6) FELADAT: Exception handling gyakorlat
+     * 6) TASK: Exception handling practice
      * 
      * Cél: Próbálj meg több műveletet végrehajtani, de kezeld a kivételeket:
      * - String to Integer konverzió
@@ -134,14 +134,14 @@ public class RecapChallenges {
     }
 
     /**
-     * 7) FELADAT: Algoritmus kombináció - keresés és rendezés
+     * 7) TASK: Algorithm combination - search and sort
      * 
      * Cél: 
      * - Rendezd a tömböt bubble sort-tal
      * - Keresd meg egy elem pozícióját bináris kereséssel
      * - Ha nem található, add vissza -1-et
      * 
-     * Példa: sortAndSearch([5, 1, 3, 2, 4], 3) -> 2 (3-as index a rendezett tömbben)
+     * Example: sortAndSearch([5, 1, 3, 2, 4], 3) -> 2 (index of 3 in sorted array)
      */
     public static int sortAndSearch(int[] array, int target) {
         // TODO: Implementáld a rendezést és keresést
@@ -215,7 +215,7 @@ public class RecapChallenges {
     }
 
     private static void runStreamMasteryTests() {
-        System.out.println("5. STREAM MESTERFELADAT TESZTEK:");
+        System.out.println("5. STREAM MASTER CHALLENGE TESTS:");
         
         List<Person> people = Arrays.asList(
             new Person("Alice", 25),

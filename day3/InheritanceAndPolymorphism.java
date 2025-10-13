@@ -1,28 +1,28 @@
 import java.util.*;
 
 /**
- * Day 3 - Öröklés és polimorfizmus
+ * Day 3 - Inheritance and Polymorphism
  * 
- * Ez a fájl haladóbb OOP koncepteket gyakorol: öröklés, polimorfizmus, interfészek.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file practices advanced OOP concepts: inheritance, polymorphism, interfaces.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class InheritanceAndPolymorphism {
 
     /**
-     * 1) FELADAT: Alaposztály és öröklés - Vehicle hierarchia
+     * 1) TASK: Base Class and Inheritance - Vehicle Hierarchy
      * 
-     * Cél: Hozz létre egy Vehicle alaposztályt és leszármazottakat
+     * Goal: Create a Vehicle base class and its descendants
      * 
-     * Vehicle alaposztály:
+     * Vehicle base class:
      * - brand (String)
      * - model (String)
      * - year (int)
-     * - start() metódus
-     * - getInfo() metódus
+     * - start() method
+     * - getInfo() method
      */
     public static abstract class Vehicle {
-        // TODO: Implementáld a Vehicle alaposztályt
+        // TODO: Implement the Vehicle base class
         protected String brand;
         protected String model;
         protected int year;
@@ -31,10 +31,10 @@ public class InheritanceAndPolymorphism {
             // TODO: Konstruktor implementálása
         }
         
-        public abstract void start(); // Absztrakt metódus
+        public abstract void start(); // Abstract method
         
         public String getInfo() {
-            // TODO: Alapvető info visszaadása
+            // TODO: Return basic info
             return "";
         }
         
@@ -45,15 +45,15 @@ public class InheritanceAndPolymorphism {
     }
 
     /**
-     * Car osztály - Vehicle leszármazott
-     * Új tulajdonság: numberOfDoors
+     * Car class - Vehicle descendant
+     * New property: numberOfDoors
      */
     public static class Car extends Vehicle {
-        // TODO: Implementáld a Car osztályt
+        // TODO: Implement the Car class
         private int numberOfDoors;
         
         public Car(String brand, String model, int year, int numberOfDoors) {
-            // TODO: Konstruktor implementálása super() hívással
+            // TODO: Implement constructor with super() call
             super(brand, model, year);
         }
         
@@ -95,7 +95,7 @@ public class InheritanceAndPolymorphism {
     }
 
     /**
-     * 2) FELADAT: Interface implementáció
+     * 2) TASK: Interface implementation
      * 
      * Cél: Hozz létre interfészeket és implementáld őket
      */
@@ -152,7 +152,7 @@ public class InheritanceAndPolymorphism {
     }
 
     /**
-     * 3) FELADAT: Equals és HashCode implementáció
+     * 3) TASK: Equals and HashCode implementation
      * 
      * Cél: Hozz létre egy Person osztályt helyes equals és hashCode implementációval
      */
@@ -191,7 +191,7 @@ public class InheritanceAndPolymorphism {
     }
 
     /**
-     * 4) FELADAT: Polimorfizmus gyakorlás
+     * 4) TASK: Polymorphism practice
      * 
      * Cél: Használd a polimorfizmust Vehicle objektumokkal
      */
@@ -351,7 +351,7 @@ public class InheritanceAndPolymorphism {
         boolean windshieldOk = bike.hasWindshield() == expectedWindshield;
         String status = windshieldOk ? "✅ PASS" : "❌ FAIL";
         
-        System.out.printf("   %s - %s: szélvédő %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: windshield %s (expected: %s)\n", 
                          status, description, bike.hasWindshield(), expectedWindshield);
     }
 
@@ -359,7 +359,7 @@ public class InheritanceAndPolymorphism {
         boolean altitudeOk = flyable.getMaxAltitude() == expectedAltitude;
         String status = altitudeOk ? "✅ PASS" : "❌ FAIL";
         
-        System.out.printf("   %s - %s: max magasság %d (várt: %d)\n", 
+        System.out.printf("   %s - %s: max altitude %d (expected: %d)\n", 
                          status, description, flyable.getMaxAltitude(), expectedAltitude);
     }
 
@@ -367,23 +367,23 @@ public class InheritanceAndPolymorphism {
         boolean result = p1.equals(p2);
         String status = result == expected ? "✅ PASS" : "❌ FAIL";
         
-        System.out.printf("   %s - %s: equals() -> %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: equals() -> %s (expected: %s)\n", 
                          status, description, result, expected);
     }
 
     private static void testPersonHashCode(Person p1, Person p2, boolean shouldBeEqual, String description) {
         boolean hashCodesEqual = p1.hashCode() == p2.hashCode();
-        boolean isCorrect = shouldBeEqual ? hashCodesEqual : true; // Ha equals false, hashCode lehet bármi
+        boolean isCorrect = shouldBeEqual ? hashCodesEqual : true; // If equals false, hashCode can be anything
         
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: hashCode konzisztens az equals-szel\n", status, description);
+        System.out.printf("   %s - %s: hashCode consistent with equals\n", status, description);
     }
 
     private static void testGarageVehicleCount(Garage garage, int expected, String description) {
         int count = garage.getTotalVehicles();
         String status = count == expected ? "✅ PASS" : "❌ FAIL";
         
-        System.out.printf("   %s - %s: %d jármű (várt: %d)\n", 
+        System.out.printf("   %s - %s: %d vehicles (expected: %d)\n", 
                          status, description, count, expected);
     }
 
@@ -392,7 +392,7 @@ public class InheritanceAndPolymorphism {
         int count = vehicles.size();
         String status = count == expected ? "✅ PASS" : "❌ FAIL";
         
-        System.out.printf("   %s - %s: %s márka %d db (várt: %d)\n", 
+        System.out.printf("   %s - %s: %s brand %d units (expected: %d)\n", 
                          status, description, brand, count, expected);
     }
 
@@ -401,7 +401,7 @@ public class InheritanceAndPolymorphism {
         int count = flyables.size();
         String status = count == expected ? "✅ PASS" : "❌ FAIL";
         
-        System.out.printf("   %s - %s: %d repülő jármű (várt: %d)\n", 
+        System.out.printf("   %s - %s: %d flying vehicles (expected: %d)\n", 
                          status, description, count, expected);
     }
 }

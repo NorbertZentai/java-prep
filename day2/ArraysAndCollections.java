@@ -1,110 +1,111 @@
 import java.util.*;
 
 /**
- * Day 2 - Tömbök és kollekciók
+ * Day 2 - Arrays and Collections
  * 
- * Ez a fájl tömb és kollekció műveletek feladatait tartalmazza.
- * Minden feladatot meg kell oldani, majd a végén lévő tesztek segítségével ellenőrizheted.
+ * This file contains exercises for array and collection operations.
+ * Complete all exercises and verify your solutions using the tests at the end.
  */
 
 public class ArraysAndCollections {
 
     /**
-     * 1) FELADAT: Alapvető tömb műveletek
+     * 1) TASK: Basic Array Operations
      * 
-     * Cél: Implementálj alapműveletek: összeg, átlag, minimum, maximum
-     * Követelmények:
-     * - Használj ciklusokat
-     * - Az átlagnál figyelj a 0-val osztásra
+     * Goal: Implement basic operations: sum, average, minimum, maximum
+          * Requirements:
+     * - Iterate through the array
+     * - Handle negative numbers and zero
+     * - Return proper average (double type)
      * 
-     * Példa: [1, 2, 3, 4, 5] -> összeg: 15, átlag: 3.0, min: 1, max: 5
+     * Example: [1, 2, 3, 4, 5] -> sum: 15, average: 3.0, min: 1, max: 5
      */
     public static int arraySum(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0;
     }
 
     public static double arrayAverage(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0.0;
     }
 
     public static int arrayMin(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0;
     }
 
     public static int arrayMax(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0;
     }
 
     /**
-     * 2) FELADAT: Második legnagyobb szám
+     * 2) TASK: Second Largest Number
      * 
-     * Cél: Találd meg a második legnagyobb számot a tömbben
+     * Goal: Find the second largest number in the array
      * Követelmények:
-     * - Kezelje a duplikátumokat (egyedi értékek között második legnagyobb)
-     * - Ha nincs második legnagyobb, dobj IllegalArgumentException-t
+     * - Handle duplicates (second largest among unique values)
+     * - If there's no second largest, throw IllegalArgumentException
      * 
-     * Példa: [1, 5, 2, 9, 3, 9] -> 5 (a 9 után a legnagyobb)
+     * Example: [1, 5, 2, 9, 3, 9] -> 5 (largest after 9)
      */
     public static int secondLargest(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return 0;
     }
 
     /**
-     * 3) FELADAT: Duplikátumok eltávolítása
+     * 3) TASK: Remove Duplicates
      * 
-     * Cél: Távolítsd el a duplikátumokat egy tömbből
+     * Goal: Remove duplicates from an array
      * Követelmények:
-     * - Használj Set-et a duplikátumok eltávolítására
-     * - Térj vissza egy új tömbbel
-     * - A sorrend nem számít
+     * - Use Set to remove duplicates
+     * - Return a new array
+     * - Order doesn't matter
      * 
-     * Példa: [1, 2, 2, 3, 3, 3, 4] -> [1, 2, 3, 4]
+     * Example: [1, 2, 2, 3, 3, 3, 4] -> [1, 2, 3, 4]
      */
     public static int[] removeDuplicates(int[] numbers) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return new int[0];
     }
 
     /**
-     * 4) FELADAT: List alapműveletek
+     * 4) TASK: List Basic Operations
      * 
-     * Cél: Gyakorold a List műveletek: hozzáadás, keresés, eltávolítás
+     * Goal: Practice List operations: add, search, remove
      * 
-     * Ez a metódus demonstrációs célú - adj vissza egy listát amely:
-     * - Tartalmazza a bemeneti elemeket
-     * - Eltávolítja a "remove" stringet ha benne van
-     * - Hozzáadja a végére a "added" stringet
+     * This method is for demonstration - return a list that:
+     * - Contains the input elements
+     * - Removes the "remove" string if it exists
+     * - Adds "added" string to the end
      */
     public static List<String> listOperations(String[] initialElements, String toRemove) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return new ArrayList<>();
     }
 
     /**
-     * 5) FELADAT: Map alapműveletek
+     * 5) TASK: Map Basic Operations
      * 
-     * Cél: Gyakorold a Map műveletek
+     * Goal: Practice Map operations
      * 
-     * Készíts egy Map-et amely:
-     * - A string hosszát tárolja kulcsként, magát a stringet értékként
-     * - Ha több string ugyanolyan hosszú, az utolsót tárolja
+     * Create a Map that:
+     * - Stores string length as key, the string itself as value
+     * - If multiple strings have same length, store the last one
      */
     public static Map<Integer, String> createLengthMap(String[] words) {
-        // TODO: Implementáld itt a megoldást
+        // TODO: Implement your solution here
         return new HashMap<>();
     }
 
     // ===============================
-    // TESZTEK - Ne módosítsd ezeket!
+    // TESTS - Don't modify these!
     // ===============================
 
     public static void main(String[] args) {
-        System.out.println("=== TÖMBÖK ÉS KOLLEKCIÓK TESZTEK ===\n");
+        System.out.println("=== ARRAYS AND COLLECTIONS TESTS ===\n");
         
         runArrayOperationsTests();
         runSecondLargestTests();
@@ -112,94 +113,94 @@ public class ArraysAndCollections {
         runListOperationsTests();
         runMapOperationsTests();
         
-        System.out.println("\n=== TESZTEK BEFEJEZVE ===");
+        System.out.println("\n=== TESTS COMPLETED ===");
     }
 
     private static void runArrayOperationsTests() {
-        System.out.println("1. TÖMB ALAPMŰVELETEK TESZTEK:");
+        System.out.println("1. ARRAY BASIC OPERATIONS TESTS:");
         
         int[] test1 = {1, 2, 3, 4, 5};
-        testArrayOperations(test1, 15, 3.0, 1, 5, "pozitív számok");
+        testArrayOperations(test1, 15, 3.0, 1, 5, "positive numbers");
         
         int[] test2 = {-5, -2, -8, -1};
-        testArrayOperations(test2, -16, -4.0, -8, -1, "negatív számok");
+        testArrayOperations(test2, -16, -4.0, -8, -1, "negative numbers");
         
         int[] test3 = {10};
-        testArrayOperations(test3, 10, 10.0, 10, 10, "egy elem");
+        testArrayOperations(test3, 10, 10.0, 10, 10, "single element");
         
         System.out.println();
     }
 
     private static void runSecondLargestTests() {
-        System.out.println("2. MÁSODIK LEGNAGYOBB TESZTEK:");
+        System.out.println("2. SECOND LARGEST TESTS:");
         
         // Test 1: Normál eset
-        testSecondLargest(new int[]{1, 5, 2, 9, 3}, 5, "normál eset");
+        testSecondLargest(new int[]{1, 5, 2, 9, 3}, 5, "normal case");
         
         // Test 2: Duplikátumokkal
-        testSecondLargest(new int[]{9, 1, 5, 2, 9, 3}, 5, "duplikátumokkal");
+        testSecondLargest(new int[]{9, 1, 5, 2, 9, 3}, 5, "with duplicates");
         
         // Test 3: Rendezett tömb
-        testSecondLargest(new int[]{1, 2, 3, 4, 5}, 4, "rendezett tömb");
+        testSecondLargest(new int[]{1, 2, 3, 4, 5}, 4, "sorted array");
         
         System.out.println();
     }
 
     private static void runRemoveDuplicatesTests() {
-        System.out.println("3. DUPLIKÁTUMOK ELTÁVOLÍTÁSA TESZTEK:");
+        System.out.println("3. REMOVE DUPLICATES TESTS:");
         
         // Test 1: Duplikátumokkal
         testRemoveDuplicates(new int[]{1, 2, 2, 3, 3, 3, 4}, 
-                           new int[]{1, 2, 3, 4}, "duplikátumokkal");
+                           new int[]{1, 2, 3, 4}, "with duplicates");
         
         // Test 2: Nincs duplikátum
         testRemoveDuplicates(new int[]{1, 2, 3, 4}, 
-                           new int[]{1, 2, 3, 4}, "nincs duplikátum");
+                           new int[]{1, 2, 3, 4}, "no duplicates");
         
         // Test 3: Mind egyforma
         testRemoveDuplicates(new int[]{5, 5, 5}, 
-                           new int[]{5}, "mind egyforma");
+                           new int[]{5}, "all identical");
         
         System.out.println();
     }
 
     private static void runListOperationsTests() {
-        System.out.println("4. LIST MŰVELETEK TESZTEK:");
+        System.out.println("4. LIST OPERATIONS TESTS:");
         
         // Test 1: Normál eset
         String[] input1 = {"apple", "banana", "remove", "cherry"};
         List<String> result1 = listOperations(input1, "remove");
         testListOperations(result1, Arrays.asList("apple", "banana", "cherry", "added"), 
-                          "normál eset");
+                          "normal case");
         
         // Test 2: Nincs eltávolítandó elem
         String[] input2 = {"apple", "banana"};
         List<String> result2 = listOperations(input2, "notfound");
         testListOperations(result2, Arrays.asList("apple", "banana", "added"), 
-                          "nincs eltávolítandó elem");
+                          "no element to remove");
         
         System.out.println();
     }
 
     private static void runMapOperationsTests() {
-        System.out.println("5. MAP MŰVELETEK TESZTEK:");
+        System.out.println("5. MAP OPERATIONS TESTS:");
         
         // Test 1: Különböző hosszúságú szavak
         String[] words1 = {"cat", "dog", "elephant", "hi"};
         Map<Integer, String> result1 = createLengthMap(words1);
         testMapOperations(result1, Map.of(3, "dog", 8, "elephant", 2, "hi"), 
-                         "különböző hosszúságú szavak");
+                         "different length words");
         
         // Test 2: Ugyanolyan hosszú szavak (utolsót kell tárolni)
         String[] words2 = {"cat", "dog", "rat"};
         Map<Integer, String> result2 = createLengthMap(words2);
         testMapOperations(result2, Map.of(3, "rat"), 
-                         "ugyanolyan hosszú szavak");
+                         "same length words");
         
         System.out.println();
     }
 
-    // Segéd metódusok a teszteléshez
+    // Helper methods for testing
     private static void testArrayOperations(int[] input, int expectedSum, double expectedAvg, 
                                           int expectedMin, int expectedMax, String description) {
         int sum = arraySum(input);
@@ -221,7 +222,7 @@ public class ArraysAndCollections {
         try {
             int result = secondLargest(input);
             String status = expected == result ? "✅ PASS" : "❌ FAIL";
-            System.out.printf("   %s - %s: %s -> %d (várt: %d)\n", 
+            System.out.printf("   %s - %s: %s -> %d (expected: %d)\n", 
                              status, description, arrayToString(input), result, expected);
         } catch (Exception e) {
             System.out.printf("   ❌ FAIL - %s: %s -> Exception: %s\n", 
@@ -236,7 +237,7 @@ public class ArraysAndCollections {
         
         boolean isCorrect = Arrays.equals(result, expected);
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s -> %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: %s -> %s (expected: %s)\n", 
                          status, description, arrayToString(input), 
                          arrayToString(result), arrayToString(expected));
     }
@@ -244,14 +245,14 @@ public class ArraysAndCollections {
     private static void testListOperations(List<String> result, List<String> expected, String description) {
         boolean isCorrect = result.equals(expected);
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: %s (expected: %s)\n", 
                          status, description, result, expected);
     }
 
     private static void testMapOperations(Map<Integer, String> result, Map<Integer, String> expected, String description) {
         boolean isCorrect = result.equals(expected);
         String status = isCorrect ? "✅ PASS" : "❌ FAIL";
-        System.out.printf("   %s - %s: %s (várt: %s)\n", 
+        System.out.printf("   %s - %s: %s (expected: %s)\n", 
                          status, description, result, expected);
     }
 
