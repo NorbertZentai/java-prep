@@ -1,0 +1,19 @@
+# Java / IDE
+target/
+out/
+bin/
+*.class
+*.log
+*.iml
+*.ipr
+*.iws
+.idea/
+.project
+.classpath
+.settings/
+# VSCode
+.vscode/
+.history/
+# OS
+.DS_Store
+Thumbs.db
