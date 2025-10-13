@@ -1,7 +1,21 @@
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+import java.math.*;
+import java.text.*;
+import java.time.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.nio.file.*;
+import java.io.*;
+import static java.lang.Math.*;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
+
 /**
- * Day 1 - String Operations and Basic Tasks
+ * Day 1 - String Basics
  * 
- * This file contains string manipulation and basic operation exercises.
+ * This file contains basic string manipulation exercises.
  * Complete all tasks, then verify your solutions using the tests at the end.
  */
 

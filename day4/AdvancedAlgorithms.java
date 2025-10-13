@@ -1,6 +1,16 @@
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
+import java.math.*;
+import java.text.*;
+import java.time.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.nio.file.*;
+import java.io.*;
+import static java.lang.Math.*;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
 
 /**
  * Day 4 - Advanced Algorithms and Java 8+ Features

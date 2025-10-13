@@ -2,8 +2,22 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 
+import java.util.*;
+import java.util.function.*;
+import java.util.stream.*;
+import java.math.*;
+import java.text.*;
+import java.time.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.nio.file.*;
+import java.io.*;
+import static java.lang.Math.*;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
+
 /**
- * Day 5 - Exception Handling and File I/O
+ * Day 5 - Exceptions and File I/O
  * 
  * This file contains exception handling and file operations exercises.
  * Complete all exercises and verify your solutions using the tests at the end.
