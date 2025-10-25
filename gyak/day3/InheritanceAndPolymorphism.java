@@ -41,13 +41,16 @@ public class InheritanceAndPolymorphism {
         
         public Vehicle(String brand, String model, int year) {
             // TODO: Konstruktor implementálása
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
         }
         
         public abstract void start(); // Abstract method
         
         public String getInfo() {
             // TODO: Return basic info
-            return "";
+            return "Brand: " + this.brand + ", Model: " + this.model + ", Year: " + this.year;
         }
         
         // Getterek
@@ -67,15 +70,18 @@ public class InheritanceAndPolymorphism {
         public Car(String brand, String model, int year, int numberOfDoors) {
             // TODO: Implement constructor with super() call
             super(brand, model, year);
+            this.numberOfDoors = numberOfDoors;
         }
         
         @Override
         public void start() {
             // TODO: Car-specifikus start implementáció
+            System.out.println("Car started.");
         }
         
         public void openTrunk() {
             // TODO: Car-specifikus metódus
+            System.out.println("Trunk has been opened.");
         }
         
         public int getNumberOfDoors() { return numberOfDoors; }
@@ -92,15 +98,18 @@ public class InheritanceAndPolymorphism {
         public Motorcycle(String brand, String model, int year, boolean hasWindshield) {
             // TODO: Konstruktor implementálása
             super(brand, model, year);
+            this.hasWindshield = hasWindshield;
         }
         
         @Override
         public void start() {
             // TODO: Motorcycle-specifikus start implementáció
+            System.out.println("Motorcycle started.");
         }
         
         public void wheelie() {
             // TODO: Motorcycle-specifikus metódus
+            System.out.println("Motorcycle doing a wheelie!");
         }
         
         public boolean hasWindshield() { return hasWindshield; }
@@ -140,21 +149,25 @@ public class InheritanceAndPolymorphism {
         public Airplane(String brand, String model, int year, int maxAltitude) {
             // TODO: Konstruktor implementálása
             super(brand, model, year);
+            this.maxAltitude = maxAltitude;
         }
         
         @Override
         public void start() {
             // TODO: Airplane start implementáció
+            System.out.println("Airplane started.");
         }
         
         @Override
         public void takeOff() {
             // TODO: Takeoff implementáció
+            System.out.println("Airplane is taking off.");
         }
         
         @Override
         public void land() {
             // TODO: Land implementáció
+            System.out.println("Airplane is landing.");
         }
         
         @Override
@@ -176,6 +189,9 @@ public class InheritanceAndPolymorphism {
         
         public Person(String name, int age, String email) {
             // TODO: Konstruktor implementálása
+            this.name = name;
+            this.age = age;
+            this.email = email;
         }
         
         // Getterek
@@ -186,19 +202,26 @@ public class InheritanceAndPolymorphism {
         @Override
         public boolean equals(Object obj) {
             // TODO: Helyes equals implementáció
-            return false;
+            if(this == obj) return true;
+            if(obj == null) return false;
+            if (!(obj instanceof Person)) return false;
+            
+            Person other = (Person) obj;
+            return Objects.equals(this.name, other.name) && 
+                   this.age == other.age && 
+                   Objects.equals(this.email, other.email);
         }
         
         @Override
         public int hashCode() {
             // TODO: Helyes hashCode implementáció
-            return 0;
+            return Objects.hash(name, age, email);
         }
         
         @Override
         public String toString() {
             // TODO: toString implementáció
-            return "";
+            return "Name: " + this.name + ", age: " + this.age + ", email: " + email;
         }
     }
 
@@ -217,29 +240,47 @@ public class InheritanceAndPolymorphism {
         
         public Garage() {
             // TODO: Konstruktor implementálása
+            vehicles = new ArrayList<Vehicle>();
         }
         
         public void addVehicle(Vehicle vehicle) {
             // TODO: Jármű hozzáadása
+            this.vehicles.add(vehicle);
         }
         
         public void startAllVehicles() {
             // TODO: Minden jármű elindítása (polimorfizmus!)
+            for(int i=0; i<vehicles.size(); i++){
+                vehicles.get(i).start();
+            }
         }
         
         public List<Vehicle> getVehiclesByBrand(String brand) {
             // TODO: Márka alapján szűrés
-            return new ArrayList<>();
+            List<Vehicle> byBrand = new ArrayList<>();
+            for(int i=0; i<vehicles.size(); i++){
+                if(vehicles.get(i).getBrand().equals(brand)){
+                    byBrand.add(vehicles.get(i));
+                }
+            }
+            return byBrand;
         }
         
         public int getTotalVehicles() {
             // TODO: Járművek számának visszaadása
-            return 0;
+            return vehicles.size();
         }
         
         public List<Flyable> getFlyableVehicles() {
             // TODO: Repülő járművek szűrése
-            return new ArrayList<>();
+            
+            List<Flyable> byBrand = new ArrayList<>();
+            for(int i=0; i<vehicles.size(); i++){
+                if( vehicles.get(i) instanceof Flyable ){
+                    byBrand.add((Flyable) vehicles.get(i));
+                }
+            }
+            return byBrand;
         }
     }
 

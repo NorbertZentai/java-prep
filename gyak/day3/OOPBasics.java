@@ -40,21 +40,29 @@ public class OOPBasics {
      */
     public static class Book {
         // TODO: Implement the Book class here
+        private String title;
+        private String author;
+        private double price;
+        private int pages;
         
         public Book(String title, String author, double price, int pages) {
             // TODO: Implement constructor
+            this.title = title;
+            this. author = author;
+            this.price = price;
+            this.pages = pages;
         }
         
         // TODO: Getter methods
-        public String getTitle() { return null; }
-        public String getAuthor() { return null; }
-        public double getPrice() { return 0.0; }
-        public int getPages() { return 0; }
+        public String getTitle() { return this.title; }
+        public String getAuthor() { return this.author; }
+        public double getPrice() { return this.price; }
+        public int getPages() { return this.pages; }
         
         @Override
         public String toString() {
             // TODO: Implement toString
-            return "";
+            return "Title: " + this.title + ", author: " + this.author + ", price: " + this.price + ", pages: " + this.pages;
         }
     }
 
@@ -72,33 +80,42 @@ public class OOPBasics {
      */
     public static class Library {
         // TODO: Implement the Library class here
+        List<Book> books;
         
         public Library() {
             // TODO: Implement constructor
+            this.books = new ArrayList<>();
         }
         
         public void addBook(Book book) {
             // TODO: Add book
+            this.books.add(book);
         }
         
         public List<Book> findBooksByAuthor(String author) {
             // TODO: Search by author
-            return new ArrayList<>();
+            List<Book> byAuthor = new ArrayList();
+            for(int i=0; i<books.size(); i++){
+                if(books.get(i).getAuthor().equals(author)){
+                    byAuthor.add(books.get(i));
+                }
+            }
+            return byAuthor;
         }
         
         public double getTotalPrice() {
             // TODO: Sum of all book prices
-            return 0.0;
+            return books.stream().mapToDouble(obj -> obj.getPrice()).sum();
         }
         
         public int getBookCount() {
             // TODO: Return number of books
-            return 0;
+            return books.size();
         }
         
         public List<Book> getAllBooks() {
             // TODO: Return all books
-            return new ArrayList<>();
+            return books;
         }
     }
 
@@ -116,30 +133,40 @@ public class OOPBasics {
      */
     public static class Student {
         // TODO: Implement the Student class here
+        private String name;
+        private List<Integer> grades;
         
         public Student(String name) {
             // TODO: Implement constructor
+            this.name = name;
+            this.grades = new ArrayList();
         }
         
-        public String getName() { return null; }
+        public String getName() { return this.name; }
         
         public void addGrade(int grade) {
             // TODO: Add grade (between 1-5)
+            this.grades.add(grade);
         }
         
         public double getAverage() {
             // TODO: Calculate average
-            return 0.0;
+            if(this.grades.isEmpty()){return 0.0;}
+            double sum = 0.00;
+            for (int i : this.grades){
+                sum += i;
+            }
+            return sum/grades.size();
         }
         
         public int getGradeCount() {
             // TODO: Return number of grades
-            return 0;
+            return grades.size();
         }
         
         public List<Integer> getGrades() {
             // TODO: Return all grades
-            return new ArrayList<>();
+            return this.grades;
         }
     }
 

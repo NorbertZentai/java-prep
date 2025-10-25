@@ -34,7 +34,9 @@ public class NumberOperations {
      */
     public static int findMax(int[] numbers) {
         // TODO: Implement your solution here
-        return 0;
+        return Arrays.stream(numbers)
+                     .max()
+                     .orElse(Integer.MIN_VALUE);
     }
 
     /**
@@ -49,6 +51,7 @@ public class NumberOperations {
      */
     public static int[] swapWithTemp(int a, int b) {
         // TODO: Implement your solution here
+
         return new int[]{a, b};
     }
 
@@ -64,6 +67,9 @@ public class NumberOperations {
      */
     public static int[] swapWithoutTemp(int a, int b) {
         // TODO: Implement your solution here
+        a = a+b;
+        b = a - b;
+        a = a - b;
         return new int[]{a, b};
     }
 

@@ -31,7 +31,8 @@ public class TestingAndDebugging {
      */
     public static int getStringLengthSafely(String input) {
         // TODO: Fix the null pointer exception
-        return input.length(); // This is buggy - fix it!
+
+        return (input != null) ? input.length() : 0; // This is buggy - fix it!
     }
 
     /**
@@ -47,7 +48,7 @@ public class TestingAndDebugging {
         if (array.length == 0) {
             throw new IllegalArgumentException("Array cannot be empty!");
         }
-        return array[array.length]; // This is buggy - fix it!
+        return array[array.length-1]; // This is buggy - fix it!
     }
 
     /**
@@ -58,7 +59,7 @@ public class TestingAndDebugging {
      */
     public static boolean isEven(int number) {
         // TODO: Fix the logic error
-        return number % 2 == 1; // This is wrong logic - fix it!
+        return number % 2 == 0; // This is wrong logic - fix it!
     }
 
     /**
@@ -69,7 +70,13 @@ public class TestingAndDebugging {
      */
     public static <T> List<T> reverseList(List<T> input) {
         // TODO: Implement list reversal with edge cases
-        return new ArrayList<>();
+        if(input == null || input.isEmpty()){
+            return new ArrayList<>();
+        }
+
+        List<T> list = new Arraylist(input);
+        Collections.reverse(list;)
+        return list;
     }
 
     /**
@@ -80,11 +87,11 @@ public class TestingAndDebugging {
      */
     public static String concatenateNumbers(int count) {
         // TODO: Optimize using StringBuilder
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 1; i <= count; i++) {
-            result += i + ","; // This is inefficient - fix it!
+            result.append(i).append(",");
         }
-        return result;
+        return result.toString();
     }
 
     /**
@@ -95,7 +102,7 @@ public class TestingAndDebugging {
      */
     public static boolean checkPasswordStrength(String pwd) {
         // TODO: Refactor this to cleaner, more readable code
-        if (pwd == null || pwd.length() < 8) return false;
+        if (pwd == null || pwd.length() < 8)return false;
         boolean a = false, b = false, c = false, d = false;
         for (int i = 0; i < pwd.length(); i++) {
             char ch = pwd.charAt(i);

@@ -33,7 +33,15 @@ public class RecapChallenges {
      */
     public static String processString(String input) {
         // TODO: Implement combined string operations
-        return "";
+        StringBuilder result = new StringBuilder(
+                                input.toUpperCase()
+                                .chars()
+                                .distinct()
+                                .mapToObj(c -> (char)c)
+                                .toString()
+                                );
+        result.reverse();
+        return result.toString();
     }
 
     /**
@@ -48,7 +56,32 @@ public class RecapChallenges {
      */
     public static int[] arrayAnalysis(int[] numbers) {
         // TODO: Implement complex array analysis
-        return new int[]{0, 0};
+        int[] result = new int[]{0, 0};
+
+        if(numbers.length == 0) return result;
+
+        int[] sorted = numbers.clone();
+        Arrays.sort(sorted);
+
+        for(int i=0; i<sorted.length-1; i++){
+            if(sorted[i] != sorted[i+1]){
+                result[0] = sorted[i+1];
+                break;
+            }
+        }
+
+        double avg = Arrays.stream(sorted).average().orElse(0.0);
+        int num = 0;
+
+        for(int i=0; i<sorted.length; i++){
+            if(sorted[i] > avg){
+                num++;
+            }
+        }
+
+        result[1] = num;
+
+        return result;
     }
 
     /**

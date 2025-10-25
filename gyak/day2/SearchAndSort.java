@@ -34,7 +34,8 @@ public class SearchAndSort {
      */
     public static int linearSearch(int[] arr, int target) {
         // TODO: Implement your solution here
-        return -1;
+        List<Integer> hlp = Arrays.stream(arr).boxed().collect(toList());
+        return hlp.indexOf(target);
     }
 
     /**
@@ -51,6 +52,20 @@ public class SearchAndSort {
      */
     public static int binarySearch(int[] arr, int target) {
         // TODO: Implement your solution here
+        int left = 0;
+        int right = arr.length-1;
+
+        while(left<=right) {
+            int mid = left + (right - left) / 2;
+            if(arr[mid] == target){
+                return mid;
+            } else if( target < arr[mid]){
+                right = mid-1;
+            } else {
+                left = mid+1;
+            }
+        }
+        
         return -1;
     }
 
@@ -68,7 +83,26 @@ public class SearchAndSort {
      */
     public static int[] bubbleSortAsc(int[] arr) {
         // TODO: Implement your solution here
-        return arr.clone();
+        int[] result = arr.clone();
+        
+        for(int pass = 0; pass < result.length -1; pass++){
+            boolean hasSwapped = false;
+
+            for(int i=0; i<result.length-1-pass; i++){
+                if(result[i] > result[i+1]) {
+                    int tmp = result[i];
+                    result[i] = result[i+1];
+                    result[i+1] = tmp;
+                    hasSwapped = true;
+                }
+            }
+
+            if(!hasSwapped){
+                break;
+            }
+        }
+        
+        return result;
     }
 
     /**
@@ -85,7 +119,25 @@ public class SearchAndSort {
      */
     public static int[] selectionSortDesc(int[] arr) {
         // TODO: Implement your solution here
-        return arr.clone();
+        int[] result = arr.clone();
+        int index = 0;
+
+        for(int i=0; i<result.length; i++){
+            int max = result[i];
+            int maxIndex = i;
+            for(int j=i; j<result.length; j++){
+                if(max < result[j]){
+                    max = result[j];
+                    maxIndex = j;
+                }
+            }
+            int tmp = result[index];
+            result[index] = max;
+            result[maxIndex] = tmp;
+            index++;
+        }
+
+        return result;
     }
 
     // ===============================

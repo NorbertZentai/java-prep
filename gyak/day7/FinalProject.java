@@ -41,38 +41,53 @@ public class FinalProject {
      */
     public static class Product {
         // TODO: Implement the Product class here
+        private int id;
+        private String name;
+        private String category;
+        private double price;
+        private int stock;
         
         public Product(int id, String name, String category, double price, int stock) {
             // TODO: Implement constructor
+            this.id = id;
+            this.name = name;
+            this.category = category;
+            this.price = price;
+            this.stock = stock;
         }
         
         // TODO: Getters
-        public int getId() { return 0; }
-        public String getName() { return null; }
-        public String getCategory() { return null; }
-        public double getPrice() { return 0.0; }
-        public int getStock() { return 0; }
+        public int getId() { return this.id; }
+        public String getName() { return this.name; }
+        public String getCategory() { return this.category; }
+        public double getPrice() { return this.price; }
+        public int getStock() { return this.stock; }
         
         // TODO: Setters (for price and stock updates)
-        public void setPrice(double price) { }
-        public void setStock(int stock) { }
+        public void setPrice(double price) { this.price = price;}
+        public void setStock(int stock) { this.stock = stock;}
         
         @Override
         public String toString() {
             // TODO: Informatív toString
-            return "";
+            return "ID: " + this.id + ", name: " + name + ", category: " + this.category + ", price: " + price + ", stock: " + stock;
         }
         
         @Override
         public boolean equals(Object obj) {
             // TODO: equals implementálása id alapján
-            return false;
+            if(obj == this) return true;
+            if(obj == null || !(obj instanceof Product)){
+                return false;
+            }
+            Product other = (Product) obj;
+            return other.getId() == this.id;
         }
         
         @Override
         public int hashCode() {
             // TODO: hashCode implementálása
-            return 0;
+            return Integer.hashCode(this.id);
         }
     }
 
@@ -89,9 +104,11 @@ public class FinalProject {
      */
     public static class Store {
         // TODO: Implementáld itt a Store osztályt
+        Map<Integer, Product> products;
         
         public Store() {
             // TODO: Konstruktor - inicializáld a Map-et
+            products = new HashMap<>();
         }
         
         /**
@@ -100,7 +117,10 @@ public class FinalProject {
          */
         public boolean addProduct(Product product) {
             // TODO: Termék hozzáadása
-            return false;
+            if(product == null) return false;
+            if(products.containsKey(product.getId())) return false;
+            products.put(product.getId(), product);
+            return true;
         }
         
         /**
@@ -108,7 +128,9 @@ public class FinalProject {
          */
         public boolean removeProduct(int productId) {
             // TODO: Termék eltávolítása
-            return false;
+            if(!products.containsKey(productId)) return false;
+            products.remove(productId);
+            return true;
         }
         
         /**
@@ -116,7 +138,7 @@ public class FinalProject {
          */
         public Product findProductById(int id) {
             // TODO: Termék keresése
-            return null;
+            return products.get(id);
         }
         
         /**
@@ -124,7 +146,11 @@ public class FinalProject {
          */
         public Product findProductByName(String name) {
             // TODO: Termék keresése név alapján
-            return null;
+            return products.values()
+                            .stream()
+                            .filter(product -> name.equals(product.getName()))
+                            .findFirst()
+                            .orElse(null);
         }
         
         /**
@@ -132,7 +158,10 @@ public class FinalProject {
          */
         public List<Product> findProductsByCategory(String category) {
             // TODO: Kategória alapján szűrés
-            return new ArrayList<>();
+            return products.values()
+                            .stream()
+                            .filter(product -> category.equals(product.getCategory()))
+                            .collect(toList());
         }
         
         /**
@@ -140,7 +169,11 @@ public class FinalProject {
          */
         public boolean updateStock(int productId, int newStock) {
             // TODO: Készlet frissítése
-            return false;
+            if(newStock < 0) return false;
+            Product product = products.get(productId);
+            if(product == null) return false;
+            product.setStock(newStock);
+            return true;
         }
         
         /**
@@ -148,7 +181,11 @@ public class FinalProject {
          */
         public boolean updatePrice(int productId, double newPrice) {
             // TODO: Ár frissítése
-            return false;
+            if(newPrice < 0.00) return false;
+            Product product = products.get(productId);
+            if(product == null) return false;
+            product.setPrice(newPrice);
+            return true;
         }
         
         /**
@@ -156,7 +193,12 @@ public class FinalProject {
          */
         public double getAveragePrice() {
             // TODO: Átlagos ár számítása
-            return 0.0;
+            if(products.isEmpty()) return 0.0;
+            return products.values()
+                            .stream()
+                            .mapToDouble(p -> p.getPrice())
+                            .average()
+                            .orElse(0.0);
         }
         
         /**
@@ -164,7 +206,11 @@ public class FinalProject {
          */
         public Product getMostExpensiveProduct() {
             // TODO: Legdrágább termék
-            return null;
+            if(products.isEmpty()) return null;
+            return products.values()
+                            .stream()
+                            .reduce((a, b) -> a.getPrice() > b.getPrice() ? a : b)
+                            .orElse(null);
         }
         
         /**
@@ -172,7 +218,10 @@ public class FinalProject {
          */
         public List<Product> getLowStockProducts(int threshold) {
             // TODO: Alacsony készletű termékek
-            return new ArrayList<>();
+            return products.values()
+                            .stream()
+                            .filter(p -> p.getStock() < threshold)
+                            .collect(toList());
         }
         
         /**
@@ -180,7 +229,7 @@ public class FinalProject {
          */
         public int getTotalProductCount() {
             // TODO: Termékek száma
-            return 0;
+            return products.size();
         }
         
         /**
@@ -188,7 +237,10 @@ public class FinalProject {
          */
         public double getTotalInventoryValue() {
             // TODO: Teljes készlet értéke
-            return 0.0;
+            return products.values()
+                            .stream()
+                            .mapToDouble(p -> p.getPrice() * p.getStock())
+                            .sum();
         }
     }
 
@@ -204,7 +256,19 @@ public class FinalProject {
      */
     public static String[] speedFizzBuzz(int n) {
         // TODO: Gyors FizzBuzz implementáció
-        return new String[0];
+        String[] result = new String[n];
+        for(int i=1; i<=n; i++){
+            if(i % 15 == 0){
+                result[i-1] = "FizzBuzz";
+            } else if(i%5 == 0){
+                result[i-1] = "Buzz";
+            } else if(i%3 == 0){
+                result[i-1] = "Fizz";
+            } else{
+                result[i-1] = String.valueOf(i);
+            }
+        }
+        return result;
     }
     
     /**
@@ -212,6 +276,11 @@ public class FinalProject {
      */
     public static boolean speedIsPalindrome(String s) {
         // TODO: Gyors palindróma ellenőrzés
+        StringBuilder reversed = new StringBuilder(s);
+        reversed.reverse();
+        if(s.equals(reversed.toString())){
+            return true;
+        }
         return false;
     }
     
@@ -220,7 +289,16 @@ public class FinalProject {
      */
     public static int[] speedSort(int[] arr) {
         // TODO: Gyors rendezés (bármely algoritmussal)
-        return arr.clone();
+        for(int i=0; i<arr.length; i++){
+            for(int j=0; j<arr.length-1-i; j++){
+                if(arr[j] > arr[j+1]){
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
+        return arr;
     }
 
     // ===============================

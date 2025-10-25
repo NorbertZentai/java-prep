@@ -34,29 +34,29 @@ public class ArraysAndCollections {
      */
     public static int arraySum(int[] numbers) {
         // TODO: Implement your solution here
-        return 0;
+        return Arrays.stream(numbers).sum();
     }
 
     public static double arrayAverage(int[] numbers) {
         // TODO: Implement your solution here
-        return 0.0;
+        return arraySum(numbers)/numbers.length;
     }
 
     public static int arrayMin(int[] numbers) {
         // TODO: Implement your solution here
-        return 0;
+        return Arrays.stream(numbers).min().orElse(Integer.MIN_VALUE);
     }
 
     public static int arrayMax(int[] numbers) {
         // TODO: Implement your solution here
-        return 0;
+        return Arrays.stream(numbers).max().orElse(Integer.MAX_VALUE);
     }
 
     /**
      * 2) TASK: Second Largest Number
      * 
      * Goal: Find the second largest number in the array
-     * Követelmények:
+     * Requirements:
      * - Handle duplicates (second largest among unique values)
      * - If there's no second largest, throw IllegalArgumentException
      * 
@@ -64,14 +64,20 @@ public class ArraysAndCollections {
      */
     public static int secondLargest(int[] numbers) {
         // TODO: Implement your solution here
-        return 0;
+        Arrays.sort(numbers);
+        for(int i=numbers.length-1; i>=0; i--){
+            if(numbers[i-1]<numbers[i]){
+                return numbers[i-1];
+            }
+        }
+        return numbers[0];
     }
 
     /**
      * 3) TASK: Remove Duplicates
      * 
      * Goal: Remove duplicates from an array
-     * Követelmények:
+     * Requirements:
      * - Use Set to remove duplicates
      * - Return a new array
      * - Order doesn't matter
@@ -80,7 +86,22 @@ public class ArraysAndCollections {
      */
     public static int[] removeDuplicates(int[] numbers) {
         // TODO: Implement your solution here
-        return new int[0];
+        List<Integer> distinct = new ArrayList();
+        distinct.add(numbers[0]);
+        Arrays.sort(numbers);
+
+        for(int i=1; i<numbers.length; i++){
+            if(distinct.get(distinct.size()-1) != numbers[i]){
+                distinct.add(numbers[i]);
+            }
+        }
+
+        int[] result = new int[distinct.size()];
+        for(int i=0; i<distinct.size(); i++) {
+            result[i] = distinct.get(i);
+        }
+
+        return result;
     }
 
     /**
@@ -95,7 +116,15 @@ public class ArraysAndCollections {
      */
     public static List<String> listOperations(String[] initialElements, String toRemove) {
         // TODO: Implement your solution here
-        return new ArrayList<>();
+        List<String> clean = Arrays.stream(initialElements).collect(toList());
+
+        if(clean.contains(toRemove)){
+            clean.remove(toRemove);
+        }
+        
+        clean.add("added");
+
+        return clean;
     }
 
     /**
@@ -109,7 +138,13 @@ public class ArraysAndCollections {
      */
     public static Map<Integer, String> createLengthMap(String[] words) {
         // TODO: Implement your solution here
-        return new HashMap<>();
+        Map<Integer, String> result = new HashMap<>();
+
+        for(String element : words){
+            result.put(element.length(), element);
+        }
+
+        return result;
     }
 
     // ===============================
