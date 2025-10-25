@@ -7,7 +7,7 @@ Csak a **leggyakoribb 20 OOP kérdés**, amit junior Java pozícióra **biztosan
 
 ## 1. Encapsulation
 
-**1. Mi a különbség a `private`, `protected`, `public` és package-private között?**
+**1. Mi a különbség a `private`, `protected`, `public` és `package-private` között?**
 
 **Jegyzet:**
 
