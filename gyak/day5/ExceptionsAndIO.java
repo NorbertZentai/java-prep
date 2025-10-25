@@ -55,10 +55,7 @@ public class ExceptionsAndIO {
      */
     public static boolean validateAge(int age) throws InvalidAgeException {
         // TODO: Implement age validation here
-        if( age < 0 || age > 150){
-            throw new invalidAgeException("Invalid Age!");
-        }
-        return true;
+        return false;
     }
 
     /**
@@ -74,11 +71,7 @@ public class ExceptionsAndIO {
      */
     public static int safeParseInt(String str, int defaultValue) {
         // TODO: Implement safe parsing here
-        try{
-            return Integer.parseInt(str);
-        } catch(NumberFormatException e){
-            return defaultValue;
-        }
+        return 0;
     }
 
     /**
@@ -95,16 +88,7 @@ public class ExceptionsAndIO {
      */
     public static List<String> readFileLines(String fileName) {
         // TODO: Implement file reading here
-        List<String> lines = new ArrayList();
-        try(BufferedReader reader = new BufferedReader(new FileReader(fileName))){
-            String line;
-            while((line = reader.readLine()) != null){
-                lines.add(line);
-            }
-            return lines;
-        } catch(IOException e){
-            return line;
-        }
+        return new ArrayList<>();
     }
 
     /**
@@ -121,15 +105,7 @@ public class ExceptionsAndIO {
      */
     public static boolean writeFileLines(String fileName, List<String> lines) {
         // TODO: Implement file writing here
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))){
-            for(String line : lines){
-                writer.write(line);
-                writer.newLine();
-            }
-            return true;
-        } catch(IOException e){
-            return false;
-        }
+        return false;
     }
 
     /**
@@ -146,13 +122,7 @@ public class ExceptionsAndIO {
      */
     public static List<String> parseCSVLine(String csvLine) {
         // TODO: Implement CSV parsing here
-        List<String> result = new ArrayList<>();
-
-        if(csvLine == null || csvLine.trim().isEmpty()){
-            return result;
-        }
-        result = Arrays.stream(csvLine.split(",")).map(string -> string.trim()).collect(toList());
-        return result;
+        return new ArrayList<>();
     }
 
     // ===============================

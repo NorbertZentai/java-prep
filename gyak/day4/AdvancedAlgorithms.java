@@ -35,22 +35,7 @@ public class AdvancedAlgorithms {
      */
     public static int[] mergeSort(int[] arr) {
         // TODO: Implement the merge sort algorithm here
-        if(arr.length <= 1) return arr.clone();
-
-        int mid = arr.length/2;
-        int[] left = new int[mid];
-        int[] right = new int[arr.length-mid];
-
-        for(int i=0; i<mid; i++){
-            left[i] = arr[i];
-        }
-        for(int i=mid; i<arr.length; i++){
-            right[i-mid] = arr[i];
-        }
-        int[] sortedLeft = mergeSort(left);
-        int[] sortedRight = mergeSort(right);
-
-        return merge(sortedLeft, sortedRight);
+        return new int[0];
     }
 
     /**
@@ -58,31 +43,7 @@ public class AdvancedAlgorithms {
      */
     private static int[] merge(int[] left, int[] right) {
         // TODO: Implement the merge logic here
-        int[] result = new int[left.length + right.length];
-        int resulti = 0;
-        int i=0;
-        int j=0;
-
-        while(i<left.length || j<right.length){
-            if( i<left.length && j<right.length){
-                if(left[i]<right[j]){
-                    result[resulti] = left[i];
-                    i++;
-                }else{
-                    result[resulti] = right[j];
-                    j++;
-                }
-            } else if( i < left.length){
-                result[resulti] = left[i];
-                i++;
-            } else {
-                result[resulti] = right[j];
-                j++;
-            }
-            resulti++;
-        }
-
-        return result;
+        return new int[0];
     }
 
     /**
@@ -98,21 +59,6 @@ public class AdvancedAlgorithms {
      */
     public static int binarySearchRecursive(int[] arr, int target, int left, int right) {
         // TODO: Implement recursive binary search here
-        int mid = left + (right - left)/2;
-        
-        if(left > right){
-            return -1;
-        }
-
-        if(arr[mid] == target){
-            return mid;
-        } else if( target < arr[mid]){
-            right = mid -1;
-            return binarySearchRecursive(arr, target, left, right);
-        } else if( target > arr[mid] ){
-            left = mid + 1;
-            return binarySearchRecursive(arr, target, left, right);
-        }
         return -1;
     }
 
@@ -129,7 +75,7 @@ public class AdvancedAlgorithms {
      */
     public static List<Integer> filterEvenNumbers(List<Integer> numbers) {
         // TODO: Implement filtering with lambda expressions here
-        return numbers.stream().filter(i -> i%2==0).toList();
+        return new ArrayList<>();
     }
 
     /**
@@ -145,7 +91,7 @@ public class AdvancedAlgorithms {
      */
     public static List<String> processWords(List<String> words) {
         // TODO: Implement stream operations chaining here
-        return words.stream().filter( word -> word.length()>3).map(word -> word.toUpperCase()).sorted().toList();
+        return new ArrayList<>();
     }
 
     /**
@@ -161,7 +107,7 @@ public class AdvancedAlgorithms {
      */
     public static Map<String, List<Integer>> groupByParity(List<Integer> numbers) {
         // TODO: Implement grouping here
-        return numbers.stream().collect(Collectors.groupingBy( number -> number%2 == 0 ? "even" : "odd" ));
+        return new HashMap<>();
     }
 
     // ===============================

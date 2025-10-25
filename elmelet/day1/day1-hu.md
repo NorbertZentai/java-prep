@@ -14,6 +14,7 @@
 
    **Jegyzet:**
 
+
 2. Hogyan működik a pass-by-value Java-ban, és mit jelent ez objektumok esetén?
 
    **Jegyzet:**

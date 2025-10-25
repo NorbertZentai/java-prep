@@ -34,22 +34,22 @@ public class ArraysAndCollections {
      */
     public static int arraySum(int[] numbers) {
         // TODO: Implement your solution here
-        return Arrays.stream(numbers).sum();
+        return 0;
     }
 
     public static double arrayAverage(int[] numbers) {
         // TODO: Implement your solution here
-        return arraySum(numbers)/numbers.length;
+        return 0.0;
     }
 
     public static int arrayMin(int[] numbers) {
         // TODO: Implement your solution here
-        return Arrays.stream(numbers).min().orElse(Integer.MIN_VALUE);
+        return 0;
     }
 
     public static int arrayMax(int[] numbers) {
         // TODO: Implement your solution here
-        return Arrays.stream(numbers).max().orElse(Integer.MAX_VALUE);
+        return 0;
     }
 
     /**
@@ -64,13 +64,7 @@ public class ArraysAndCollections {
      */
     public static int secondLargest(int[] numbers) {
         // TODO: Implement your solution here
-        Arrays.sort(numbers);
-        for(int i=numbers.length-1; i>=0; i--){
-            if(numbers[i-1]<numbers[i]){
-                return numbers[i-1];
-            }
-        }
-        return numbers[0];
+        return 0;
     }
 
     /**
@@ -86,22 +80,7 @@ public class ArraysAndCollections {
      */
     public static int[] removeDuplicates(int[] numbers) {
         // TODO: Implement your solution here
-        List<Integer> distinct = new ArrayList();
-        distinct.add(numbers[0]);
-        Arrays.sort(numbers);
-
-        for(int i=1; i<numbers.length; i++){
-            if(distinct.get(distinct.size()-1) != numbers[i]){
-                distinct.add(numbers[i]);
-            }
-        }
-
-        int[] result = new int[distinct.size()];
-        for(int i=0; i<distinct.size(); i++) {
-            result[i] = distinct.get(i);
-        }
-
-        return result;
+        return new int[0];
     }
 
     /**
@@ -116,15 +95,7 @@ public class ArraysAndCollections {
      */
     public static List<String> listOperations(String[] initialElements, String toRemove) {
         // TODO: Implement your solution here
-        List<String> clean = Arrays.stream(initialElements).collect(toList());
-
-        if(clean.contains(toRemove)){
-            clean.remove(toRemove);
-        }
-        
-        clean.add("added");
-
-        return clean;
+        return new ArrayList<>();
     }
 
     /**
@@ -138,13 +109,7 @@ public class ArraysAndCollections {
      */
     public static Map<Integer, String> createLengthMap(String[] words) {
         // TODO: Implement your solution here
-        Map<Integer, String> result = new HashMap<>();
-
-        for(String element : words){
-            result.put(element.length(), element);
-        }
-
-        return result;
+        return new HashMap<>();
     }
 
     // ===============================

@@ -29,46 +29,37 @@ public class JavaPracticeProject {
         private Map<LocalDate, List<String>> dailyTasks;
 
         public DailyRoutineTracker() {
-            this.dailyTasks = new HashMap<>();
+            // TODO: Initialize dailyTasks Map
         }
 
         /**
          * Add task to given date
          */
         public void addTask(LocalDate date, String task) {
-            dailyTasks.computeIfAbsent(date, k -> new ArrayList<>()).add(task);
+            // TODO: Add task to the given date
         }
 
         /**
          * Get tasks for given date
          */
         public List<String> getTasksForDate(LocalDate date) {
-            return dailyTasks.getOrDefault(date, new ArrayList<>());
+            // TODO: Return tasks for the given date
+            return new ArrayList<>();
         }
 
         /**
          * Get total task count
          */
         public int getTotalTaskCount() {
-            return dailyTasks.values().stream()
-                    .mapToInt(List::size)
-                    .sum();
+            // TODO: Return total number of all tasks
+            return 0;
         }
 
         /**
          * Print today's tasks
          */
         public void printTodaysTasks() {
-            LocalDate today = LocalDate.now();
-            List<String> tasks = getTasksForDate(today);
-            System.out.println("=== Today's tasks (" + today + ") ===");
-            if (tasks.isEmpty()) {
-                System.out.println("No tasks for today.");
-            } else {
-                for (int i = 0; i < tasks.size(); i++) {
-                    System.out.println((i + 1) + ". " + tasks.get(i));
-                }
-            }
+            // TODO: Print today's tasks
         }
     }
 
@@ -126,71 +117,45 @@ public class JavaPracticeProject {
         private Map<StudyTopic, Integer> topicProgress;
 
         public LearningStatistics() {
-            this.topicProgress = new HashMap<>();
+            // TODO: Initialize topicProgress Map
         }
 
         /**
          * Record progress in a topic (percentage)
          */
         public void recordProgress(StudyTopic topic, int progressPercent) {
-            if (progressPercent < 0 || progressPercent > 100) {
-                throw new IllegalArgumentException("Progress must be between 0-100!");
-            }
-            topicProgress.merge(topic, progressPercent, Integer::sum);
+            // TODO: Record progress for a topic (validate 0-100 range)
         }
 
         /**
          * Total progress summary
          */
         public int getTotalProgress() {
-            return topicProgress.values().stream()
-                    .mapToInt(Integer::intValue)
-                    .sum();
+            // TODO: Return sum of all progress values
+            return 0;
         }
 
         /**
          * Determine best topic
          */
         public StudyTopic getBestTopic() {
-            return topicProgress.entrySet().stream()
-                    .max(Map.Entry.comparingByValue())
-                    .map(Map.Entry::getKey)
-                    .orElse(null);
+            // TODO: Return topic with highest progress
+            return null;
         }
 
         /**
          * Calculate average progress
          */
         public double getAverageProgress() {
-            if (topicProgress.isEmpty()) {
-                return 0.0;
-            }
-            return (double) getTotalProgress() / topicProgress.size();
+            // TODO: Calculate average progress
+            return 0.0;
         }
 
         /**
          * Print progress report
          */
         public void printProgressReport() {
-            System.out.println("=== LEARNING PROGRESS REPORT ===");
-            if (topicProgress.isEmpty()) {
-                System.out.println("No progress recorded yet.");
-                return;
-            }
-
-            topicProgress.entrySet().stream()
-                    .sorted(Map.Entry.<StudyTopic, Integer>comparingByValue().reversed())
-                    .forEach(entry -> 
-                        System.out.printf("%s: %d%%\n", 
-                            entry.getKey().getDescription(), entry.getValue())
-                    );
-
-            System.out.printf("\nTotal progress: %d points\n", getTotalProgress());
-            System.out.printf("Average progress: %.2f%%\n", getAverageProgress());
-            StudyTopic best = getBestTopic();
-            if (best != null) {
-                System.out.printf("Best topic: %s\n", best.getDescription());
-            }
+            // TODO: Print progress report
         }
     }
 
@@ -203,7 +168,7 @@ public class JavaPracticeProject {
         private final List<String> allProblems;
 
         public InterviewPreparation() {
-            this.solvedProblems = new HashSet<>();
+            // TODO: Initialize solvedProblems Set and allProblems List
             this.allProblems = Arrays.asList(
                 "FizzBuzz",
                 "Missing Number",
@@ -219,55 +184,38 @@ public class JavaPracticeProject {
          * Mark problem as solved
          */
         public void markAsSolved(String problemName) {
-            if (allProblems.contains(problemName)) {
-                solvedProblems.add(problemName);
-            }
+            // TODO: Mark problem as solved (only if it exists in allProblems)
         }
 
         /**
          * List of remaining problems
          */
         public List<String> getRemainingProblems() {
-            return allProblems.stream()
-                    .filter(problem -> !solvedProblems.contains(problem))
-                    .collect(Collectors.toList());
+            // TODO: Return list of unsolved problems
+            return new ArrayList<>();
         }
 
         /**
          * Completion percentage
          */
         public double getCompletionPercentage() {
-            if (allProblems.isEmpty()) {
-                return 0.0;
-            }
-            return (double) solvedProblems.size() / allProblems.size() * 100;
+            // TODO: Calculate completion percentage
+            return 0.0;
         }
 
         /**
          * Next problem suggestion
          */
         public String getNextProblemSuggestion() {
-            List<String> remaining = getRemainingProblems();
-            return remaining.isEmpty() ? "All problems completed!" : remaining.get(0);
+            // TODO: Return next unsolved problem or completion message
+            return "";
         }
 
         /**
          * Interview preparation report
          */
         public void printPreparationStatus() {
-            System.out.println("=== INTERVIEW PREPARATION STATUS ===");
-            System.out.printf("Completed: %d/%d (%.1f%%)\n", 
-                solvedProblems.size(), allProblems.size(), getCompletionPercentage());
-            
-            System.out.println("\nSolved problems:");
-            solvedProblems.forEach(problem -> System.out.println("✓ " + problem));
-            
-            System.out.println("\nRemaining problems:");
-            getRemainingProblems().forEach(problem -> System.out.println("○ " + problem));
-            
-            if (!getRemainingProblems().isEmpty()) {
-                System.out.println("\nNext recommended: " + getNextProblemSuggestion());
-            }
+            // TODO: Print interview preparation status
         }
     }
 

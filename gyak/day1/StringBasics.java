@@ -33,10 +33,7 @@ public class StringBasics {
      */
     public static String reverseString(String input) {
         // TODO: Implement your solution here
-        StringBuilder sb = new StringBuilder();
-        sb.append(input);
-
-        return sb.reverse().toString();
+        return "";
     }
 
     /**
@@ -51,12 +48,7 @@ public class StringBasics {
      */
     public static int countVowels(String word) {
         // TODO: Implement your solution here
-        String vowels = "aiueo";
-        String lower = word.toLowerCase();
-
-        return (int) lower.chars()
-                          .filter( c -> vowels.contains(String.valueOf((char) c)))
-                          .count();
+        return 0;
     }
 
     /**
@@ -71,8 +63,7 @@ public class StringBasics {
      */
     public static boolean isPalindrome(String input) {
         // TODO: Implement your solution here
-        StringBuilder reversed = new StringBuilder(input.toLowerCase()).reverse();
-        return input.toLowerCase().equals(reversed.toString());
+        return false;
     }
 
     // ===============================

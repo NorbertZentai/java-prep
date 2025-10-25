@@ -31,8 +31,7 @@ public class TestingAndDebugging {
      */
     public static int getStringLengthSafely(String input) {
         // TODO: Fix the null pointer exception
-
-        return (input != null) ? input.length() : 0; // This is buggy - fix it!
+        return 0;
     }
 
     /**
@@ -45,10 +44,7 @@ public class TestingAndDebugging {
      */
     public static int getLastElement(int[] array) {
         // TODO: Fix the index out of bounds error
-        if (array.length == 0) {
-            throw new IllegalArgumentException("Array cannot be empty!");
-        }
-        return array[array.length-1]; // This is buggy - fix it!
+        return 0;
     }
 
     /**
@@ -59,7 +55,7 @@ public class TestingAndDebugging {
      */
     public static boolean isEven(int number) {
         // TODO: Fix the logic error
-        return number % 2 == 0; // This is wrong logic - fix it!
+        return false;
     }
 
     /**
@@ -70,13 +66,7 @@ public class TestingAndDebugging {
      */
     public static <T> List<T> reverseList(List<T> input) {
         // TODO: Implement list reversal with edge cases
-        if(input == null || input.isEmpty()){
-            return new ArrayList<>();
-        }
-
-        List<T> list = new Arraylist(input);
-        Collections.reverse(list;)
-        return list;
+        return new ArrayList<>();
     }
 
     /**
@@ -87,11 +77,7 @@ public class TestingAndDebugging {
      */
     public static String concatenateNumbers(int count) {
         // TODO: Optimize using StringBuilder
-        StringBuilder result = new StringBuilder();
-        for (int i = 1; i <= count; i++) {
-            result.append(i).append(",");
-        }
-        return result.toString();
+        return "";
     }
 
     /**
@@ -102,16 +88,7 @@ public class TestingAndDebugging {
      */
     public static boolean checkPasswordStrength(String pwd) {
         // TODO: Refactor this to cleaner, more readable code
-        if (pwd == null || pwd.length() < 8)return false;
-        boolean a = false, b = false, c = false, d = false;
-        for (int i = 0; i < pwd.length(); i++) {
-            char ch = pwd.charAt(i);
-            if (ch >= 'A' && ch <= 'Z') a = true;
-            if (ch >= 'a' && ch <= 'z') b = true;
-            if (ch >= '0' && ch <= '9') c = true;
-            if ("!@#$%^&*".indexOf(ch) != -1) d = true;
-        }
-        return a && b && c && d;
+        return false;
     }
 
     /**
@@ -121,10 +98,8 @@ public class TestingAndDebugging {
      * Test normal cases, edge cases and invalid inputs
      */
     public static int divide(int a, int b) {
-        if (b == 0) {
-            throw new ArithmeticException("Nullával nem lehet osztani!");
-        }
-        return a / b;
+        // TODO: Implement division with exception handling
+        return 0;
     }
 
     /**
@@ -135,7 +110,7 @@ public class TestingAndDebugging {
      */
     public static void debugArrayInfo(int[] array, String arrayName) {
         // TODO: Implementálj hasznos debug kiírást
-        System.out.println("Debug info nincs implementálva");
+        System.out.println("Debug info for " + arrayName);
     }
 
     // ===============================

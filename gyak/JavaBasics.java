@@ -27,17 +27,8 @@ public class JavaBasics {
      * Requirements: Handle negative numbers too, non-empty array
      */
     public static int findMax(int[] numbers) {
-        if (numbers == null || numbers.length == 0) {
-            throw new IllegalArgumentException("Array cannot be empty or null!");
-        }
-        
-        int max = numbers[0];
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] > max) {
-                max = numbers[i];
-            }
-        }
-        return max;
+        // TODO: Implement your solution here
+        return 0;
     }
 
     /**
@@ -46,15 +37,8 @@ public class JavaBasics {
      * Requirements: Handle empty and single-character strings
      */
     public static String reverseString(String input) {
-        if (input == null || input.length() <= 1) {
-            return input;
-        }
-        
-        StringBuilder reversed = new StringBuilder();
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed.append(input.charAt(i));
-        }
-        return reversed.toString();
+        // TODO: Implement your solution here
+        return "";
     }
 
     /**
@@ -63,18 +47,8 @@ public class JavaBasics {
      * Requirements: Case-insensitive, only a e i o u
      */
     public static int countVowels(String word) {
-        if (word == null) {
-            return 0;
-        }
-        
-        String vowels = "aeiouAEIOU";
-        int count = 0;
-        for (char c : word.toCharArray()) {
-            if (vowels.indexOf(c) != -1) {
-                count++;
-            }
-        }
-        return count;
+        // TODO: Implement your solution here
+        return 0;
     }
 
     /**
@@ -83,19 +57,13 @@ public class JavaBasics {
      * Variants: with helper variable and without
      */
     public static int[] swapNumbers(int a, int b) {
-        // With helper variable
-        int temp = a;
-        a = b;
-        b = temp;
-        return new int[]{a, b};
+        // TODO: Implement your solution here
+        return new int[]{0, 0};
     }
     
     public static int[] swapNumbersWithoutTemp(int a, int b) {
-        // Arithmetic method
-        a = a + b;
-        b = a - b;
-        a = a - b;
-        return new int[]{a, b};
+        // TODO: Implement your solution here
+        return new int[]{0, 0};
     }
 
     /**
@@ -104,22 +72,8 @@ public class JavaBasics {
      * Requirements: Case-insensitive
      */
     public static boolean isPalindrome(String input) {
-        if (input == null) {
-            return false;
-        }
-        
-        String cleaned = input.toLowerCase();
-        int left = 0;
-        int right = cleaned.length() - 1;
-        
-        while (left < right) {
-            if (cleaned.charAt(left) != cleaned.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
+        // TODO: Implement your solution here
+        return false;
     }
 
     /**
@@ -127,16 +81,18 @@ public class JavaBasics {
      * Goal: Basic operations: sum, average, min/max
      */
     public static int sum(int[] numbers) {
-        return Arrays.stream(numbers).sum();
+        // TODO: Implement your solution here
+        return 0;
     }
     
     public static double average(int[] numbers) {
-        if (numbers.length == 0) return 0;
-        return (double) sum(numbers) / numbers.length;
+        // TODO: Implement your solution here
+        return 0.0;
     }
     
     public static int min(int[] numbers) {
-        return Arrays.stream(numbers).min().orElse(0);
+        // TODO: Implement your solution here
+        return 0;
     }
 
     /**
@@ -144,9 +100,8 @@ public class JavaBasics {
      * Goal: Return unique elements from an array
      */
     public static int[] removeDuplicates(int[] numbers) {
-        return Arrays.stream(numbers)
-                    .distinct()
-                    .toArray();
+        // TODO: Implement your solution here
+        return new int[0];
     }
 
     /**
@@ -154,20 +109,8 @@ public class JavaBasics {
      * Goal: Return the second largest number
      */
     public static int secondLargest(int[] numbers) {
-        if (numbers.length < 2) {
-            throw new IllegalArgumentException("At least 2 elements required!");
-        }
-        
-        int[] uniqueSorted = Arrays.stream(numbers)
-                                  .distinct()
-                                  .sorted()
-                                  .toArray();
-        
-        if (uniqueSorted.length < 2) {
-            throw new IllegalArgumentException("No second largest element!");
-        }
-        
-        return uniqueSorted[uniqueSorted.length - 2];
+        // TODO: Implement your solution here
+        return 0;
     }
 
     /**
@@ -176,19 +119,8 @@ public class JavaBasics {
      *       "Buzz" for divisible by 5, "FizzBuzz" for both
      */
     public static String[] fizzBuzz(int n) {
-        String[] result = new String[n];
-        for (int i = 1; i <= n; i++) {
-            if (i % 15 == 0) {
-                result[i - 1] = "FizzBuzz";
-            } else if (i % 3 == 0) {
-                result[i - 1] = "Fizz";
-            } else if (i % 5 == 0) {
-                result[i - 1] = "Buzz";
-            } else {
-                result[i - 1] = String.valueOf(i);
-            }
-        }
-        return result;
+        // TODO: Implement your solution here
+        return new String[0];
     }
 
     /**
@@ -196,24 +128,13 @@ public class JavaBasics {
      * Goal: Calculate n! value recursively and iteratively
      */
     public static long factorialRecursive(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("Negative numbers don't have factorial!");
-        }
-        if (n <= 1) {
-            return 1;
-        }
-        return n * factorialRecursive(n - 1);
+        // TODO: Implement your solution here
+        return 0;
     }
     
     public static long factorialIterative(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("Negative numbers don't have factorial!");
-        }
-        long result = 1;
-        for (int i = 2; i <= n; i++) {
-            result *= i;
-        }
-        return result;
+        // TODO: Implement your solution here
+        return 0;
     }
 
     /**
@@ -221,21 +142,8 @@ public class JavaBasics {
      * Goal: Return the first n Fibonacci numbers
      */
     public static int[] fibonacciSequence(int n) {
-        if (n <= 0) {
-            return new int[0];
-        }
-        if (n == 1) {
-            return new int[]{0};
-        }
-        
-        int[] fib = new int[n];
-        fib[0] = 0;
-        fib[1] = 1;
-        
-        for (int i = 2; i < n; i++) {
-            fib[i] = fib[i - 1] + fib[i - 2];
-        }
-        return fib;
+        // TODO: Implement your solution here
+        return new int[0];
     }
 
     /**
@@ -243,22 +151,8 @@ public class JavaBasics {
      * Goal: Check if a number is prime
      */
     public static boolean isPrime(int n) {
-        if (n <= 1) {
-            return false;
-        }
-        if (n <= 3) {
-            return true;
-        }
-        if (n % 2 == 0 || n % 3 == 0) {
-            return false;
-        }
-        
-        for (int i = 5; i * i <= n; i += 6) {
-            if (n % i == 0 || n % (i + 2) == 0) {
-                return false;
-            }
-        }
-        return true;
+        // TODO: Implement your solution here
+        return false;
     }
 
     /**
