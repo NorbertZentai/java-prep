@@ -43,3 +43,4 @@
 - Írj SQL lekérdezést, amely visszaadja a top 3 legnagyobb rendelési értéket ügyfelenként.
 - Gyakorold egy many-to-many kapcsolat (pl. `students` – `courses`) létrehozását és lekérdezését join-okkal.
 - Gondold át, hogyan magyaráznád el junior szinten, miért fontosak az indexek egy gyakran olvasott táblán.
+- **Gyakorlati feladat:** Írd ki azokat az `order_id`-kat, amelyekhez a legnagyobb értékű eladás (sales_amount) tartozik egy orders táblából, ahol a sales_amount már összesítve van tárolva, de rendezetlenül.

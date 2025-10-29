@@ -15,27 +15,35 @@
 
 	**Jegyzet:**
 
-2. Hogyan injektálnál függőségeket a Springben? Melyik megközelítést preferálod és miért?
+2. Mi az a REST API? Milyen elvek és folyamatok tartoznak hozzá?
 
 	**Jegyzet:**
 
-3. Miért érdemes DTO-kat használni, és hogyan validálod őket?
+3. Hogyan injektálnál függőségeket a Springben? Melyik megközelítést preferálod és miért?
 
 	**Jegyzet:**
 
-4. Hogyan kezelnéd a kivételeket globálisan egy REST API-ban?
+4. Miért érdemes DTO-kat használni, és hogyan validálod őket?
 
 	**Jegyzet:**
 
-5. Miben különbözik a PUT és a PATCH HTTP metódus?
+5. Hogyan kezelnéd a kivételeket globálisan egy REST API-ban?
 
 	**Jegyzet:**
 
-6. Hogyan adsz vissza különböző HTTP státuszkódokat a Spring Controllerből?
+6. Miben különbözik a PUT és a PATCH HTTP metódus?
 
 	**Jegyzet:**
 
-7. Milyen lépésekkel építenél fel egy integrációs tesztet egy REST végpontra?
+7. Hogyan adsz vissza különböző HTTP státuszkódokat a Spring Controllerből?
+
+	**Jegyzet:**
+
+8. Milyen lépésekkel építenél fel egy integrációs tesztet egy REST végpontra?
+
+	**Jegyzet:**
+
+9. Mi a különbség a **Monolith** és **Microservices** architektúra között? Mikor melyiket választanád?
 
 	**Jegyzet:**
 

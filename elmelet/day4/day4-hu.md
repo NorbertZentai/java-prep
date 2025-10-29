@@ -23,6 +23,7 @@
 
 	**Jegyzet:**
 
+
 4. Mikor használod a `Optional.orElseGet`-et `orElse` helyett?
 
 	**Jegyzet:**

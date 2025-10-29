@@ -726,6 +726,11 @@ print(5); // ???
 **Jegyzet:**
 
 
+**14.8. Mi az a **compiled language** és **interpreted language**? Java melyik?**
+
+**Jegyzet:**
+
+
 ---
 
 ## 15. Multithreading Alapok
@@ -758,6 +763,11 @@ print(5); // ???
 
 
 **15.6. Mi a különbség a `wait()`, `notify()` és `sleep()` között?**
+
+**Jegyzet:**
+
+
+**15.7. Mi a különbség a **TCP** és **UDP** protokoll között? Mikor melyiket használnád?**
 
 **Jegyzet:**
 

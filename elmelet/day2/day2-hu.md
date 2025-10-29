@@ -18,23 +18,27 @@
 
 	**Jegyzet:**
 
-3. Miért fontos az `equals` és `hashCode` metódusokat együtt felülírni?
+3. Mi a különbség a `List` és a `Set` között? Adj konkrét példát!
 
 	**Jegyzet:**
 
-4. Magyarázd el a generics type erasure koncepcióját, milyen hatása van runtime-ban?
+4. Miért fontos az `equals` és `hashCode` metódusokat együtt felülírni?
 
 	**Jegyzet:**
 
-5. Mikor használnád a `<? super T>` és mikor a `<? extends T>` wildcardot?
+5. Magyarázd el a generics type erasure koncepcióját, milyen hatása van runtime-ban?
 
 	**Jegyzet:**
 
-6. Mondj példát checked és unchecked exception-re, és indokold, mikor melyik célszerű.
+6. Mikor használnád a `<? super T>` és mikor a `<? extends T>` wildcardot?
 
 	**Jegyzet:**
 
-7. Hogyan működik a try-with-resources szerkezet? Mit kell implementálnia az erőforrásnak?
+7. Mondj példát checked és unchecked exception-re, és indokold, mikor melyik célszerű.
+
+	**Jegyzet:**
+
+8. Hogyan működik a try-with-resources szerkezet? Mit kell implementálnia az erőforrásnak?
 
 	**Jegyzet:**
 
